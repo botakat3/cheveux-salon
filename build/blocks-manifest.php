@@ -55,6 +55,20 @@ return array(
 				'default' => array(
 					
 				)
+			),
+			'buttonColor' => array(
+				'type' => 'string'
+			),
+			'modeColor' => array(
+				'type' => 'string'
+			),
+			'layoutFlip' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'themeMode' => array(
+				'type' => 'string',
+				'default' => 'dark'
 			)
 		)
 	),

@@ -13,6 +13,8 @@ import { __ } from '@wordpress/i18n';
  */
 import {MediaUpload, MediaUploadCheck, RichText, PlainText, useBlockProps, URLInput,} from '@wordpress/block-editor';
 import {Button, SelectControl} from "@wordpress/components";
+import ProjectBlockSettings from "./ProjectBlockSettings";
+
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -38,8 +40,14 @@ export default function Edit({attributes, setAttributes}) {
 		setAttributes({ tools: nextTools });
 	};
 
-	return (
-		<div {...useBlockProps() }>
+
+		return (
+		<div {...useBlockProps({
+			className: attributes.layoutFlip ? "is-flipped" : "",
+			"data-theme": attributes.themeMode || "dark"
+		}) }>
+
+			<ProjectBlockSettings attributes={attributes} setAttributes={setAttributes} />
 
 			<PlainText className="project"
 					   placeholder="Project Name Placeholder"
@@ -65,7 +73,10 @@ export default function Edit({attributes, setAttributes}) {
 					</MediaUploadCheck>
 				</div>
 
-				<div className="project-link">
+				<div className="project-link"
+					 style={{ backgroundColor: attributes.buttonColor }}
+
+				>
 					<p>Project Link</p>
 					<URLInput
 						value={attributes.buttonUrl}

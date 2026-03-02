@@ -13,7 +13,28 @@
 
 
 }
-/* kb/project-block — Notebook grid and two-column layout */
+/* DARK MODE */
+.wp-block-kb-project-block[data-theme="dark"] {
+	--paper: #2a0711;
+	--ink: #fff7f1;
+	--card: rgba(255, 255, 255, 0.08);
+	--accent: #f47258;
+	background-color: #2a0711;
+}
+
+/* LIGHT MODE */
+.wp-block-kb-project-block[data-theme="light"] {
+	--paper: #fbf6ef;
+	--ink: #200808;
+	--card: #e9e4df;
+	--accent: #f47258;
+}
+.wp-block-kb-project-block .project,
+.wp-block-kb-project-block .rightside h2,
+.wp-block-kb-project-block .overview,
+.wp-block-kb-project-block .tools-used__title {
+	color: var(--ink);
+}
 
 .wp-block-kb-project-block {
 	--paper: #fbf6ef;
@@ -37,6 +58,12 @@
 	margin: 0 auto;
 	padding: clamp(40px, 6vw, 80px) 24px;
 }
+/* Flipped layout */
+.wp-block-kb-project-block.is-flipped {
+	grid-template-areas:
+		"title title"
+		"right left";
+}
 
 /* Title */
 .wp-block-kb-project-block .project {
@@ -59,30 +86,30 @@
 	gap: 22px;
 }
 
-.wp-block-kb-project-block .photo {
-	background: none;
-	padding: 0;
-	border-radius: 0;
-	box-shadow: none;
+.wp-block-kb-project-block .photo,
+.wp-block-kb-project-block .leftside .wp-block-button,
+.wp-block-kb-project-block .leftside .wp-block-buttons{
+	width: 100%;
+	max-width: 520px;
+
 }
 
 .wp-block-kb-project-block .photo img {
 	width: 100%;
-	max-width: 520px;
 	aspect-ratio: 3 / 4;
 	object-fit: cover;
 	object-position: top;
-	display: block;
 	border-radius: 28px;
+	display: block;
 }
 
-.wp-block-kb-project-block a.button.wp-element-button,
-.wp-block-kb-project-block .button.wp-element-button {
+.wp-block-kb-project-block a.button.wp-element-button, .project-link {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 
-	width: min(360px, 90%);
+	width: 100%;
+	max-width: 520px;
 	padding: 16px 26px;
 	border-radius: 9999px;
 
@@ -95,6 +122,7 @@
 	font-size: 18px;
 
 	box-shadow: 0 10px 24px rgba(242, 111, 91, 0.25);
+	box-sizing: border-box;
 }
 
 .wp-block-kb-project-block a.button.wp-element-button:hover {

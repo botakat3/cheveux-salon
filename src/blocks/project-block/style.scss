@@ -3,6 +3,29 @@
 @import "../../components/ToolsTags/ToolsTags.scss";
 /* kb/project-block — Notebook grid and two-column layout */
 
+/* DARK MODE */
+.wp-block-kb-project-block[data-theme="dark"] {
+	--paper: #2a0711;
+	--ink: #fff7f1;
+	--card: rgba(255, 255, 255, 0.08);
+	--accent: #f47258;
+	background-color: #2a0711;
+}
+
+/* LIGHT MODE */
+.wp-block-kb-project-block[data-theme="light"] {
+	--paper: #fbf6ef;
+	--ink: #200808;
+	--card: #e9e4df;
+	--accent: #f47258;
+}
+.wp-block-kb-project-block .project,
+.wp-block-kb-project-block .rightside h2,
+.wp-block-kb-project-block .overview,
+.wp-block-kb-project-block .tools-used__title {
+	color: var(--ink);
+}
+
 .wp-block-kb-project-block {
 	--paper: #fbf6ef;
 	--grid: rgba(162, 206, 230, 0.35);
@@ -23,6 +46,12 @@
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: clamp(40px, 6vw, 80px) 24px;
+}
+/* Flipped layout */
+.wp-block-kb-project-block.is-flipped {
+	grid-template-areas:
+		"title title"
+		"right left";
 }
 
 /* Title */
@@ -87,6 +116,7 @@
 	box-shadow: 0 10px 24px rgba(242, 111, 91, 0.25);
 	box-sizing: border-box;
 }
+
 
 .wp-block-kb-project-block a.button.wp-element-button:hover {
 	filter: brightness(0.98);

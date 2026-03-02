@@ -5,6 +5,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import {PlainText, RichText, useBlockProps} from '@wordpress/block-editor';
+
 /**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
@@ -17,7 +18,10 @@ import {PlainText, RichText, useBlockProps} from '@wordpress/block-editor';
 export default function save({attributes}) {
 
 	return (
-		<div {...useBlockProps.save()}>
+		<div {...useBlockProps.save({
+			className: attributes.layoutFlip ? "is-flipped" : "",
+			"data-theme": attributes.themeMode || "dark"
+		})}>
 			<h1 className="project">{ attributes.project }</h1>
 
 				<div className="leftside">
@@ -28,6 +32,7 @@ export default function save({attributes}) {
 					{attributes.buttonUrl ? (
 						<a
 							className="button wp-element-button"
+							style={{ backgroundColor: attributes.buttonColor }}
 							href={attributes.buttonUrl}
 							target="_blank"
 						>

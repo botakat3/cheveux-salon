@@ -37,7 +37,7 @@ export default function Edit({attributes, setAttributes}) {
 	let divStyle = {
 		// css property : value
 		// css property is camelCased
-		borderColor: attributes.borderColor,
+		buttonColor: attributes.buttonColor,
 		color: attributes.textColor,
 	}
 

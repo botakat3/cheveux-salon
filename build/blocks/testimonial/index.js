@@ -147,7 +147,7 @@ function Edit({
   let divStyle = {
     // css property : value
     // css property is camelCased
-    borderColor: attributes.borderColor,
+    buttonColor: attributes.buttonColor,
     color: attributes.textColor
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {

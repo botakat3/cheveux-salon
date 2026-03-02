@@ -42,6 +42,20 @@
 		"tools": {
 			"type": "array",
 			"default": []
+		},
+		"buttonColor": {
+			"type": "string"
+		},
+		"modeColor": {
+			"type": "string"
+		},
+		"layoutFlip": {
+			"type": "boolean",
+			"default": false
+		},
+		"themeMode": {
+			"type": "string",
+			"default": "dark"
 		}
 	}
 }
