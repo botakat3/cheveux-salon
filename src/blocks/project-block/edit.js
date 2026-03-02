@@ -21,6 +21,7 @@ import {Button, SelectControl} from "@wordpress/components";
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
+import ToolsTags from "../../components/ToolsTags/ToolsTags";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -31,6 +32,11 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit({attributes, setAttributes}) {
+	const tools = attributes.tools || [];
+
+	const setTools = (nextTools) => {
+		setAttributes({ tools: nextTools });
+	};
 
 	return (
 		<div {...useBlockProps() }>
@@ -46,7 +52,7 @@ export default function Edit({attributes, setAttributes}) {
 					<MediaUploadCheck>
 						<MediaUpload
 							onSelect={(media) =>
-								setAttributes({imageUrl: media.sizes.large.url})
+								setAttributes({imageUrl: media.sizes.full.url})
 							}
 							allowedTypes={['image']}
 							render={({open}) => (
@@ -71,20 +77,21 @@ export default function Edit({attributes, setAttributes}) {
 			</div>
 
 
-	<div className="rightside">
-		<div className="text">
-			<h2>Overview</h2>
-			<RichText className="overview"
-					  placeholder="Start typing description here..."
-					  tagName="div"
-					  value={attributes.overview}
-					  onChange={overview => setAttributes({overview})}
-					  allowFormats={['core/bold', 'core/italic']}
+			<div className="rightside">
+				<div className="text">
+					<h2 className="overview-title">Overview</h2>
+					<RichText className="overview"
+							  placeholder="Start typing description here..."
+							  tagName="div"
+							  value={attributes.overview}
+							  onChange={overview => setAttributes({overview})}
+							  allowFormats={['core/bold', 'core/italic']}
 
-			/>
+					/>
 
+				</div>
+					<ToolsTags tools={tools} setTools={setTools} />
+			</div>
 		</div>
-	</div>
-</div>
-);
+	);
 }

@@ -11,7 +11,8 @@ return array(
 		'icon' => 'project-block',
 		'description' => 'Add your projects!',
 		'keywords' => array(
-			'project'
+			'project',
+			'add'
 		),
 		'example' => array(
 			
@@ -48,6 +49,12 @@ return array(
 			'imageUrl' => array(
 				'type' => 'string',
 				'default' => 'https://placehold.co/75'
+			),
+			'tools' => array(
+				'type' => 'array',
+				'default' => array(
+					
+				)
 			)
 		)
 	),

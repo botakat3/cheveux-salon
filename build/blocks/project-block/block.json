@@ -8,7 +8,8 @@
   "icon": "project-block",
   "description": "Add your projects!",
   "keywords": [
-    "project"
+    "project",
+    "add"
   ],
   "example": {},
   "supports": {
@@ -43,6 +44,10 @@
     "imageUrl": {
       "type": "string",
       "default": "https://placehold.co/75"
+    },
+    "tools": {
+      "type": "array",
+      "default": []
     }
   }
 }

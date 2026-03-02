@@ -13,7 +13,7 @@
 
 
 }
-/* kb/project-block — Notebook grid + two-column layout */
+/* kb/project-block — Notebook grid and two-column layout */
 
 .wp-block-kb-project-block {
 	--paper: #fbf6ef;
@@ -22,15 +22,6 @@
 	--card: #e9e4df;
 	--accent: #F47258;
 
-	/* grid paper background */
-	background-color: var(--paper);
-	background-image:
-		linear-gradient(var(--grid) 1px, transparent 1px),
-		linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-	background-size: 48px 48px;
-
-	padding: clamp(24px, 4vw, 56px);
-	border-radius: 20px;
 
 	/* layout */
 	display: grid;
@@ -39,8 +30,12 @@
 		"title title"
 		"left right";
 	row-gap: 16px;
-	column-gap: clamp(40px, 6vw, 120px);
+	column-gap: clamp(60px, 6vw, 120px);
 	align-items: start;
+
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: clamp(40px, 6vw, 80px) 24px;
 }
 
 /* Title */

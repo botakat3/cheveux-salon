@@ -7,7 +7,7 @@
 	"category": "design",
 	"icon": "project-block",
 	"description": "Add your projects!",
-	"keywords": ["project"],
+	"keywords": ["project", "add"],
 	"example": {},
 	"supports": {
 		"html": false,
@@ -38,6 +38,10 @@
 		"imageUrl": {
 			"type": "string",
 			"default": "https://placehold.co/75"
+		},
+		"tools": {
+			"type": "array",
+			"default": []
 		}
 	}
 }

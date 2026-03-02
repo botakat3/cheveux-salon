@@ -1,5 +1,7 @@
 @import "/src/scss/variables";
-/* kb/project-block — Notebook grid + two-column layout */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+@import "../../components/ToolsTags/ToolsTags.scss";
+/* kb/project-block — Notebook grid and two-column layout */
 
 .wp-block-kb-project-block {
 	--paper: #fbf6ef;
@@ -7,15 +9,6 @@
 	--ink: #200808;
 	--card: #e9e4df;
 	--accent: #F47258;
-
-	/* grid paper background */
-	background-color: var(--paper);
-	background-image:
-		linear-gradient(var(--grid) 1px, transparent 1px),
-		linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-	background-size: 48px 48px;
-
-	padding: clamp(24px, 4vw, 56px);
 
 	/* layout */
 	display: grid;
@@ -26,12 +19,15 @@
 	row-gap: 16px;
 	column-gap: clamp(40px, 6vw, 120px);
 	align-items: start;
+
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: clamp(40px, 6vw, 80px) 24px;
 }
 
 /* Title */
 .wp-block-kb-project-block .project {
 	grid-area: title;
-	margin: 0 0 0px;
 	color: var(--ink);
 	font-size: clamp(36px, 4.4vw, 64px);
 	line-height: 1.05;
@@ -43,39 +39,40 @@
 }
 
 
-/* Left side (image and button) */
 .wp-block-kb-project-block .leftside {
+	align-items: flex-start;
 	grid-area: left;
 	display: flex;
 	flex-direction: column;
 	gap: 22px;
+	width: 100%;
+
 }
 
-.wp-block-kb-project-block .photo {
-	background: none;
-	padding: 0;
-	border-radius: 0;
-	box-shadow: none;
+.wp-block-kb-project-block .photo,
+.wp-block-kb-project-block .leftside .wp-block-button,
+.wp-block-kb-project-block .leftside .wp-block-buttons{
+	width: 100%;
+	max-width: 520px;
+
 }
 
 .wp-block-kb-project-block .photo img {
 	width: 100%;
-	max-width: 520px;
 	aspect-ratio: 3 / 4;
 	object-fit: cover;
 	object-position: top;
-	display: block;
 	border-radius: 28px;
+	display: block;
 }
 
-/* Link button   */
-.wp-block-kb-project-block a.button.wp-element-button,
-.wp-block-kb-project-block .button.wp-element-button {
+.wp-block-kb-project-block a.button.wp-element-button {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 
-	width: min(360px, 90%);
+	width: 100%;
+	max-width: 520px;
 	padding: 16px 26px;
 	border-radius: 9999px;
 
@@ -83,11 +80,12 @@
 	color: #24100f;
 	text-decoration: none;
 
-	font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+	font-family: Poppins, serif;
 	font-weight: 700;
 	font-size: 18px;
 
 	box-shadow: 0 10px 24px rgba(242, 111, 91, 0.25);
+	box-sizing: border-box;
 }
 
 .wp-block-kb-project-block a.button.wp-element-button:hover {
@@ -95,13 +93,15 @@
 	transform: translateY(-1px);
 }
 
+
 /* Right side text */
 .wp-block-kb-project-block .rightside {
 	grid-area: right;
 	padding-top: 10px;
-	max-width: 560px;
+	width: 100%;
 }
 
+/* Overview heading */
 .wp-block-kb-project-block .rightside h2 {
 	margin: 0 0 10px;
 	color: var(--ink);
@@ -111,16 +111,18 @@
 
 	font-family: "Casual Human", "Bradley Hand", cursive;
 	font-weight: 700;
+
 }
 
 /* Overview body */
 .wp-block-kb-project-block .overview {
 	margin: 0;
 	color: var(--ink);
-	font-size: 15px;
+	font-size: 18px;
 	line-height: 1.55;
 	font-family: "Poppins", Roboto, sans-serif;
-	max-width: 520px;
+	width: 100%;
+
 }
 
 /* Mobile stack */
@@ -133,7 +135,4 @@
 			"right";
 	}
 
-	.wp-block-kb-project-block .rightside {
-		max-width: 100%;
-	}
 }

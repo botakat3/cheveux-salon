@@ -5,7 +5,6 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import {PlainText, RichText, useBlockProps} from '@wordpress/block-editor';
-
 /**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
@@ -21,25 +20,43 @@ export default function save({attributes}) {
 		<div {...useBlockProps.save()}>
 			<h1 className="project">{ attributes.project }</h1>
 
-			<div className="leftside">
-				<div className="photo">
-					<img src={attributes.imageUrl} alt={"Photo of " + attributes.project}/>
+				<div className="leftside">
+					<div className="photo">
+						<img src={attributes.imageUrl} alt={"Photo of " + attributes.project}/>
+					</div>
+
+					{attributes.buttonUrl ? (
+						<a
+							className="button wp-element-button"
+							href={attributes.buttonUrl}
+							target="_blank"
+						>
+							Check out {attributes.project}
+						</a>
+					) : null}
 				</div>
 
-				{ attributes.buttonUrl ? (
-					<a
-						className="button wp-element-button"
-						href={ attributes.buttonUrl }
-						target="_blank"
-					>
-						Check out { attributes.project }
-					</a>
-				) : null}
-			</div>
+				<div className="rightside">
+					<h2>Overview</h2>
+					<RichText.Content
+						className="overview"
+						tagName="div"
+						value={attributes.overview}
+					/>					{attributes.tools && attributes.tools.length > 0 ? (
+						<div className="tools-section">
+							<h3 className="tools-title">Tools Used</h3>
 
-			<div className="rightside">
-				<h2>Overview</h2>
-				<p className="overview">{ attributes.overview }</p>
-			</div>
+							<div className="tools-list">
+								{attributes.tools.map((tool) => (
+									<span className="tool-pill" key={tool}>
+									{tool}
+								</span>
+								))}
+							</div>
+						</div>
+					) : null}
+				</div>
+
+
 		</div>);
 }
