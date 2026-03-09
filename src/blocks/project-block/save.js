@@ -22,7 +22,7 @@ export default function save({attributes}) {
 			className: attributes.layoutFlip ? "is-flipped" : "",
 			"data-theme": attributes.themeMode || "dark"
 		})}>
-			<h1 className="project">{ attributes.project }</h1>
+			{/*<h1 className="project">{ attributes.project }</h1>*/}
 
 				<div className="leftside">
 					<div className="photo">

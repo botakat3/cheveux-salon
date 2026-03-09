@@ -18,10 +18,12 @@
 		"pma-down": "docker container remove wordpress-phpmyadmin"
 	},
 	"dependencies": {
+		"@popperjs/core": "^2.11.8",
 		"@wordpress/block-editor": "latest",
 		"@wordpress/blocks": "latest",
 		"@wordpress/components": "^32.2.0",
-		"@wordpress/i18n": "latest"
+		"@wordpress/i18n": "latest",
+		"bootstrap": "^5.3.8"
 	},
 	"devDependencies": {
 		"@wordpress/env": "^10.39.0",

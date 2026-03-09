@@ -157,13 +157,6 @@ function Edit({
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_ProjectBlockSettings__WEBPACK_IMPORTED_MODULE_3__["default"], {
       attributes: attributes,
       setAttributes: setAttributes
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PlainText, {
-      className: "project",
-      placeholder: "Project Name Placeholder",
-      value: attributes.project,
-      onChange: project => setAttributes({
-        project
-      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "leftside",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
@@ -319,10 +312,7 @@ function save({
       className: attributes.layoutFlip ? "is-flipped" : "",
       "data-theme": attributes.themeMode || "dark"
     }),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-      className: "project",
-      children: attributes.project
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       className: "leftside",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "photo",
