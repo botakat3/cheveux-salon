@@ -18,10 +18,9 @@ $query = new WP_Query([
 	'order' => 'ASC',
 ]);
 
-
 ?>
 <div <?php echo get_block_wrapper_attributes(); ?>>
-	<div class="row row-cols-1 row-cols-md-2 g-4">
+	<div class="row row-cols-1 row-cols-md-1 g-4">
 
 	<!-- The loop -->
 	<?php
@@ -29,36 +28,53 @@ $query = new WP_Query([
 		$query->the_post();
 		?>
 	<div class="col">
-		<div class="card" style="width: 18rem;">
-			<div class="card-img" >
-				<?php
-				$image_url = get_field('thumbnail', get_the_ID());
-
-				if ($image_url) : ?>
-					<img
-						src="<?php echo esc_url($image_url); ?>"
-						class="project-image img-fluid"
-						alt="<?php echo esc_attr(get_the_title()); ?>"
-					>
-				<?php endif; ?>			</div>
-			<div class="card-body">
-				<h2 class="card-title"><?= get_the_title() ?></h2>
-<!--				<p class="card-text">--><?php //= get_the_content() ?><!--</p>-->
-				<div class="tools-section">
-					<p>Tools Used</p>
-					<div class="tools-list ">
+		<div class="card mb-3 h-100">
+			<div class="row g-0 h-100">
+				<div class="col-md-4">
+					<div class="card-img w-100 h-100" >
 						<?php
-						$tools = get_post_meta(get_the_ID(), 'tools', true);
+						$image_url = get_field('thumbnail', get_the_ID());
 
-						if (!empty($tools) && is_array($tools)) {
-							foreach ($tools as $tool) {
-								echo '<span class="tool-pill">' . esc_html($tool) . '</span> ';
-							}
-						}
-						?>
+						if ($image_url) : ?>
+
+							<img
+								src="<?php echo esc_url($image_url); ?>"
+								class="project-image img-fluid"
+								alt="<?php echo esc_attr(get_the_title()); ?>"
+							>
+						<?php endif; ?>
 					</div>
+
 				</div>
-				<a href=<?php the_permalink(); ?> class="btn btn-primary rounded-pill w-100">View Project!</a>
+				<div class="col-md-8">
+					<div class="card-body p-4">
+						<h2 class="card-title"><?= get_the_title() ?></h2>
+						<?php
+						$desc  = get_field('project_description');
+
+						if ($desc): ?>
+							<p class="card-text p-3"><?php echo esc_html($desc); ?></p>
+						<?php endif; ?>
+						<div class="tools-section p-3">
+							<h6>Tools Used</h6>
+							<div class="tools-list ">
+								<?php
+								$tools = get_post_meta(get_the_ID(), 'tools', true);
+
+								if (!empty($tools) && is_array($tools)) {
+									foreach ($tools as $tool) {
+										echo '<span class="tool-pill">' . esc_html($tool) . '</span> ';
+									}
+								}
+								?>
+							</div>
+						</div>
+						<a href="<?php echo esc_url(get_permalink()); ?>" class="btn btn-primary rounded-pill w-100 mt-auto">
+							View Project
+						</a>
+					</div>
+
+				</div>
 			</div>
 		</div>
 	</div>

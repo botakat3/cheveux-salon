@@ -11093,6 +11093,7 @@ textarea.form-control-lg {
  */
 .card-img {
   width: 100%;
+  height: 100%;
   aspect-ratio: 1/1;
   overflow: hidden;
 }
@@ -11109,6 +11110,9 @@ h2, .h2 {
   font-family: "Super Chill";
   font-weight: normal;
   font-style: normal;
+}
+p {
+  font-size: 0.9rem;
 }
 .tools-title {
   font-size: 0.4rem;
@@ -11131,6 +11135,7 @@ h2, .h2 {
   border-radius: 999px;
   background: #4b0f1d;
   color: white;
+  font-size: 0.7rem;
 }
 .btn-primary {
   background-color: #F47258;

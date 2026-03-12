@@ -72,6 +72,27 @@ return array(
 			)
 		)
 	),
+	'project-finder' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'tk/project-finder',
+		'version' => '0.1.0',
+		'title' => 'Searchable project listing',
+		'category' => 'design',
+		'icon' => 'id',
+		'description' => 'Search for projects listing',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'high-pulp-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
 	'project-list' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
