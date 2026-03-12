@@ -9,7 +9,7 @@ export default function App(props){
 	let [sortOrder, setSortOrder] = useState('asc');
 	let [selectedTools, setSelectedTools] = useState([]);
 	let [showToolDropdown, setShowToolDropdown] = useState(false);
-
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		// get all the staff from the api
@@ -20,6 +20,8 @@ export default function App(props){
 				//store the data in staff
 				setProject(data);
 				setFilteredProject(data);
+				setLoading(false);
+
 			})
 
 	}, []); // <-- this defines all dependencies from when this will run. Empty means it will run once when the page loads.
@@ -34,7 +36,9 @@ export default function App(props){
 
 		setFilterKeyword(keyword);
 		setFilteredProject(filteredProject);
-	};
+
+	}
+
 
 	//Sort by filter
 	function doSort(order){
@@ -166,7 +170,7 @@ export default function App(props){
 				</select>
 			</div>
 
-			<ProjectList items={filteredProject}/>
+			<ProjectList items={filteredProject} loading={loading}/>
 		</div>
 	)
 }
