@@ -1,48 +1,52 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ProjectList from "./components/ProjectList";
 
-export default function App(props){
-	//variable     , method      =            default value
-	let [project, setProject] = useState([]);
-	let [filteredProject, setFilteredProject] = useState([]);
+export default function App() {
+	const [project, setProject] = useState([]);
+	const [filteredProject, setFilteredProject] = useState([]);
 	const [loading, setLoading] = useState(true);
 
-	let [filterKeyword, setFilterKeyword] = useState('');
-	let [sortOrder, setSortOrder] = useState('asc');
-	let [selectedTools, setSelectedTools] = useState([]);
+	const [filterKeyword, setFilterKeyword] = useState('');
+	const [sortOrder, setSortOrder] = useState('asc');
+	const [selectedTools, setSelectedTools] = useState([]);
+	const [showToolDropdown, setShowToolDropdown] = useState(false);
 
-	let [showToolDropdown, setShowToolDropdown] = useState(false);
-
+	const dropdownRef = useRef(null);
 
 	useEffect(() => {
-		// get all the staff from the api
-		// TODO: Add pagination if there's way more staff than 2 lol
 		fetch('/wp-json/wp/v2/project?orderby=title&order=asc')
 			.then(response => response.json())
 			.then(data => {
-				//store the data in staff
 				setProject(data);
 				setFilteredProject(data);
 				setLoading(false);
-
 			})
+			.catch(error => {
+				console.error('Fetch error:', error);
+				setLoading(false);
+			});
+	}, []);
 
-	}, []); // <-- this defines all dependencies from when this will run. Empty means it will run once when the page loads.
+	useEffect(() => {
+		function handleClickOutside(event) {
+			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+				setShowToolDropdown(false);
+			}
+		}
 
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => document.removeEventListener('mousedown', handleClickOutside);
+	}, []);
 
-
-	//Filtering
 	function applyFilters(keyword, tools, order) {
 		let updatedProjects = [...project];
 
-		// search
 		if (keyword.trim() !== '') {
 			updatedProjects = updatedProjects.filter(item =>
 				item.title.rendered.toLowerCase().includes(keyword.toLowerCase())
 			);
 		}
 
-		// tools filter
 		if (tools.length > 0) {
 			updatedProjects = updatedProjects.filter(item => {
 				const projectTools = item.acf?.tools || [];
@@ -50,7 +54,6 @@ export default function App(props){
 			});
 		}
 
-		// sort
 		updatedProjects.sort((a, b) => {
 			const titleA = a.title.rendered.toLowerCase();
 			const titleB = b.title.rendered.toLowerCase();
@@ -64,6 +67,16 @@ export default function App(props){
 		setFilteredProject(updatedProjects);
 	}
 
+	function doSearch(keyword) {
+		setFilterKeyword(keyword);
+		applyFilters(keyword, selectedTools, sortOrder);
+	}
+
+	function doSort(order) {
+		setSortOrder(order);
+		applyFilters(filterKeyword, selectedTools, order);
+	}
+
 	function handleToolChange(tool) {
 		let updatedTools;
 
@@ -74,58 +87,25 @@ export default function App(props){
 		}
 
 		setSelectedTools(updatedTools);
-
-		if (updatedTools.length === 0) {
-			setFilteredProject(project);
-			return;
-		}
-
-		const filtered = project.filter(item => {
-			const tools = item.acf?.tools || [];
-			return updatedTools.some(selectedTool => tools.includes(selectedTool));
-		});
-
-		setFilteredProject(filtered);
+		applyFilters(filterKeyword, updatedTools, sortOrder);
 	}
-// for dropdown event
-	const dropdownRef = useRef(null);
-	useEffect(() => {
-		function handleClickOutside(event) {
-			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-				setShowToolDropdown(false);
-			}
-		}
 
-		document.addEventListener("mousedown", handleClickOutside);
-
-		return () => {
-			document.removeEventListener("mousedown", handleClickOutside);
-		};
-	}, []);
-
+	const allTools = [...new Set(
+		project.flatMap(item => item.acf?.tools || [])
+	)];
 
 	return (
 		<div>
-			<h2>Explore my latest projects!</h2>
-			<div className="search">
-				<label className="input-group-lg input-group mb-5 mt-5 shadow rounded-pill">
-					<input type="text"
-						   value={filterKeyword}
-						   onChange={e => doFilter(e.target.value)}
-						   className="placeholder-sm form-control rounded-pill d-flex flex-column justify-content-center "
-						   id="searchTermForm" placeholder="Start searching here"/>
+			<h2>My Projects</h2>
 
-				</label>
-			</div>
-			<div className="d-flex justify-content-between align-items-center mb-2">
-				<div className="mb-4 position-relative" ref={dropdownRef}>
+			<div className="d-flex justify-content-between align-items-center mb-4">
+				<div ref={dropdownRef} className="position-relative">
 					<button
 						type="button"
-						className="btn btn-outline-secondary rounded-pill"
+						className="btn btn-outline-dark rounded-pill"
 						onClick={() => setShowToolDropdown(!showToolDropdown)}
 					>
-						Filter by Tools
-						{selectedTools.length > 0 ? ` (${selectedTools.length})` : ''}
+						Filter Tools
 					</button>
 
 					{showToolDropdown && (
@@ -144,25 +124,12 @@ export default function App(props){
 									</label>
 								</div>
 							))}
-
-							{selectedTools.length > 0 && (
-								<button
-									type="button"
-									className="btn btn-sm btn-link text-decoration-none px-0 mt-2"
-									onClick={() => {
-										setSelectedTools([]);
-										setFilteredProject(project);
-									}}
-								>
-									Clear filters
-								</button>
-							)}
 						</div>
 					)}
 				</div>
 
 				<select
-					className="form-select w-auto rounded-pill "
+					className="form-select w-auto rounded-pill"
 					value={sortOrder}
 					onChange={(e) => doSort(e.target.value)}
 				>
@@ -171,7 +138,17 @@ export default function App(props){
 				</select>
 			</div>
 
-			<ProjectList items={filteredProject} loading={loading}/>
+			<div className="mb-4">
+				<input
+					type="text"
+					value={filterKeyword}
+					onChange={(e) => doSearch(e.target.value)}
+					className="form-control rounded-pill"
+					placeholder="Search projects"
+				/>
+			</div>
+
+			<ProjectList items={filteredProject} loading={loading} />
 		</div>
-	)
+	);
 }

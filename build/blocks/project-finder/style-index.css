@@ -11143,5 +11143,48 @@ p {
 .btn-primary:hover {
   background-color: #4b0f1d;
 }
+.skeleton {
+  display: block;
+  background: linear-gradient(90deg, #ececec 25%, #f5f5f5 50%, #ececec 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.4s infinite;
+  border-radius: 12px;
+}
+.skeleton-img {
+  min-height: 260px;
+  height: 100%;
+}
+.skeleton-title {
+  height: 32px;
+  width: 55%;
+}
+.skeleton-text {
+  height: 16px;
+  width: 100%;
+}
+.skeleton-text.short {
+  width: 70%;
+}
+.skeleton-subtitle {
+  height: 18px;
+  width: 100px;
+}
+.skeleton-pill {
+  height: 32px;
+  width: 90px;
+  border-radius: 999px;
+}
+.skeleton-button {
+  height: 48px;
+  border-radius: 999px;
+}
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
 
 /*# sourceMappingURL=style-index.css.map*/
