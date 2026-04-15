@@ -12,7 +12,7 @@ export default function BlockSettings({attributes, setAttributes}) {
 				<PanelRow>
 					<ColorPalette
 						colors={[
-							{name:'Accent', color: '#f47258'},
+							{name:'Accent', color: '#000'},
 							{name:'Blue', color: '#C2D6F1'},
 						]}
 						value={attributes.buttonColor}
