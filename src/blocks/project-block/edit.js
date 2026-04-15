@@ -40,7 +40,6 @@ export default function Edit({attributes, setAttributes}) {
 		setAttributes({ tools: nextTools });
 	};
 
-
 		return (
 		<div {...useBlockProps({
 			className: attributes.layoutFlip ? "is-flipped" : "",
@@ -49,11 +48,6 @@ export default function Edit({attributes, setAttributes}) {
 
 			<ProjectBlockSettings attributes={attributes} setAttributes={setAttributes} />
 
-			{/*<PlainText className="project"*/}
-			{/*		   placeholder="Project Name Placeholder"*/}
-			{/*		   value={attributes.project}*/}
-			{/*		   onChange={project => setAttributes({project})}*/}
-			{/*/>*/}
 
 			<div className="leftside">
 				<div className="photo">
