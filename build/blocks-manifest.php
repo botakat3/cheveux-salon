@@ -1,17 +1,58 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
-	'project-block' => array(
+	'cheveux-hero' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'kb/project-block',
+		'name' => 'cheveux/hero',
 		'version' => '0.1.0',
-		'title' => 'Project Block',
+		'title' => 'Cheveux Hero',
 		'category' => 'design',
-		'icon' => 'project-block',
-		'description' => 'Add your projects!',
+		'icon' => 'cover-image',
+		'description' => 'Hero section for Cheveux homepage',
 		'keywords' => array(
-			'project',
+			'homepage',
+			'add',
+			'hero',
+			'banner'
+		),
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false,
+			'align' => array(
+				'wide',
+				'full'
+			)
+		),
+		'textdomain' => 'high-pulp-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js',
+		'attributes' => array(
+			'quote' => array(
+				'type' => 'string',
+				'default' => 'Effortless beauty, elevated.'
+			),
+			'title' => array(
+				'type' => 'string',
+				'default' => 'CHEVEUX'
+			)
+		)
+	),
+	'content-block' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'cheveux/content-block',
+		'version' => '0.1.0',
+		'title' => 'Content Block',
+		'category' => 'design',
+		'icon' => 'align-pull-left',
+		'description' => 'Use this block to add your content! Flexible block with image and layout switching options.',
+		'keywords' => array(
+			'content',
 			'add'
 		),
 		'example' => array(
@@ -30,45 +71,37 @@ return array(
 		'style' => 'file:./style-index.css',
 		'viewScript' => 'file:./view.js',
 		'attributes' => array(
-			'project' => array(
-				'type' => 'string',
-				'source' => 'text',
-				'selector' => '.project'
+			'hasImage' => array(
+				'type' => 'boolean',
+				'default' => true
 			),
-			'overview' => array(
+			'imagePosition' => array(
 				'type' => 'string',
-				'source' => 'html',
-				'selector' => '.overview'
-			),
-			'buttonUrl' => array(
-				'type' => 'string',
-				'source' => 'attribute',
-				'selector' => '.button',
-				'attribute' => 'href'
+				'default' => 'left'
 			),
 			'imageUrl' => array(
 				'type' => 'string',
-				'default' => 'https://placehold.co/75'
+				'default' => ''
 			),
-			'tools' => array(
-				'type' => 'array',
-				'default' => array(
-					
-				)
+			'imageId' => array(
+				'type' => 'number',
+				'default' => 0
 			),
-			'buttonColor' => array(
-				'type' => 'string'
+			'imageAlt' => array(
+				'type' => 'string',
+				'default' => ''
 			),
-			'modeColor' => array(
-				'type' => 'string'
+			'title' => array(
+				'type' => 'string',
+				'default' => 'Section Title'
 			),
-			'layoutFlip' => array(
-				'type' => 'boolean',
-				'default' => false
-			),
-			'themeMode' => array(
+			'colorPreset' => array(
 				'type' => 'string',
 				'default' => 'light'
+			),
+			'text' => array(
+				'type' => 'string',
+				'default' => 'Add your content here.'
 			)
 		)
 	),

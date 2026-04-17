@@ -4,6 +4,7 @@
 		".",
 		"https://downloads.wordpress.org/plugin/query-monitor.3.20.2.zip"
 	],
+	"themes": [ "./themes/cheveux-child" ],
 	"port": 80,
 	"phpmyadminPort": 8080,
 	"env": {

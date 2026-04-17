@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "cheveux/hero",
+  "version": "0.1.0",
+  "title": "Cheveux Hero",
+  "category": "design",
+  "icon": "cover-image",
+  "description": "Hero section for Cheveux homepage",
+  "keywords": [
+    "homepage",
+    "add",
+    "hero",
+    "banner"
+  ],
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "high-pulp-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "quote": {
+      "type": "string",
+      "default": "Effortless beauty, elevated."
+    },
+    "title": {
+      "type": "string",
+      "default": "CHEVEUX"
+    }
+  }
+}

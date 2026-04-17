@@ -1,0 +1,63 @@
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/content-block/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+.content-section {
+  padding: 4rem 2rem;
+}
+.content-section__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+.content-section--image-left .content-section__inner {
+  grid-template-columns: 1fr 1fr;
+}
+.content-section--image-right .content-section__inner {
+  grid-template-columns: 1fr 1fr;
+}
+.content-section--image-right .content-section__media {
+  order: 2;
+}
+.content-section--image-right .content-section__content {
+  order: 1;
+}
+.content-section--text-only .content-section__inner {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+}
+.content-section__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+.content-section__placeholder {
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed #ccc;
+  border-radius: 16px;
+}
+.content-section__title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+}
+.content-section__text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .content-section--image-left .content-section__inner,
+  .content-section--image-right .content-section__inner {
+    grid-template-columns: 1fr;
+  }
+  .content-section--image-right .content-section__media,
+  .content-section--image-right .content-section__content {
+    order: initial;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

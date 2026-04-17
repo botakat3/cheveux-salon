@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "cheveux/content-block",
+  "version": "0.1.0",
+  "title": "Content Block",
+  "category": "design",
+  "icon": "align-pull-left",
+  "description": "Use this block to add your content! Flexible block with image and layout switching options.",
+  "keywords": [
+    "content",
+    "add"
+  ],
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "high-pulp-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "hasImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "imagePosition": {
+      "type": "string",
+      "default": "left"
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageId": {
+      "type": "number",
+      "default": 0
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": "Section Title"
+    },
+    "colorPreset": {
+      "type": "string",
+      "default": "light"
+    },
+    "text": {
+      "type": "string",
+      "default": "Add your content here."
+    }
+  }
+}
