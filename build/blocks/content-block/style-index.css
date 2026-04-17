@@ -31,23 +31,24 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 16px;
 }
 .content-section__placeholder {
   min-height: 320px;
   display: grid;
   place-items: center;
   border: 1px dashed #ccc;
-  border-radius: 16px;
 }
 .content-section__title {
   font-size: clamp(2rem, 5vw, 4rem);
   margin-bottom: 1rem;
+  font-family: "Bageki Luxury";
+  font-style: italic;
 }
 .content-section__text {
   font-size: 1.125rem;
   line-height: 1.7;
   margin: 0;
+  font-family: Poppins;
 }
 @media (max-width: 768px) {
   .content-section--image-left .content-section__inner,

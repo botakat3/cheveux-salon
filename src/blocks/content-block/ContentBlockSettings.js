@@ -5,7 +5,7 @@ import {
 	SelectControl,
 } from "@wordpress/components";
 
-import { COLOR_PRESETS } from "./color-presets.js";
+import { COLOR_PRESETS } from "../color-presets.js";
 
 export default function ContentBlockSettings({ attributes, setAttributes }) {
 	const {

@@ -105,6 +105,71 @@ return array(
 			)
 		)
 	),
+	'full-image' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'cheveux/about-hero',
+		'version' => '0.1.0',
+		'title' => 'About Hero',
+		'category' => 'design',
+		'icon' => 'cover-image',
+		'description' => 'Hero section for Cheveux homepage',
+		'keywords' => array(
+			'add',
+			'hero',
+			'banner',
+			'about'
+		),
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false,
+			'align' => array(
+				'wide',
+				'full'
+			)
+		),
+		'textdomain' => 'high-pulp-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js',
+		'attributes' => array(
+			'eyebrow' => array(
+				'type' => 'string',
+				'default' => 'About Cheveux'
+			),
+			'title' => array(
+				'type' => 'string',
+				'default' => 'Effortless beauty with an elevated touch.'
+			),
+			'text' => array(
+				'type' => 'string',
+				'default' => 'Create a short introduction here to describe your salon, brand, or story.'
+			),
+			'imageId' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'imageUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imageAlt' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imagePosition' => array(
+				'type' => 'string',
+				'default' => 'right'
+			),
+			'colorPreset' => array(
+				'type' => 'string',
+				'default' => 'navy'
+			)
+		)
+	),
 	'project-finder' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,

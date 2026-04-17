@@ -19,3 +19,39 @@ Version: 1.0.0
 	font-style: italic;
 	font-display: swap;
 }
+
+@font-face {
+	font-family: "Minakoe";
+	src: url("./assets/fonts/minakoe.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+
+.cheveux-page-header {
+	background: #f6f0e8;
+	text-align: center;
+
+	.entry-title {
+		font-size: clamp(2.5rem, 6vw, 5rem);
+		line-height: 1;
+	}
+}
+
+.cheveux-page-content {
+	.entry-content {
+		font-size: 1.05rem;
+		line-height: 1.8;
+	}
+}
+
+.page-contact {
+	.contact-details {
+		padding: 2rem;
+		border-radius: 1rem;
+		background: #f8f6f2;
+		height: 100%;
+	}
+}

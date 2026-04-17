@@ -1,0 +1,1 @@
+{"version":3,"file":"blocks/full-image/index.css","mappings":";;;AAAA;EACC;EACA;AACD,C","sources":["webpack://high-pulp-blocks/./src/blocks/full-image/editor.scss"],"sourcesContent":[".cheveux-hero {\n\tborder: 1px dashed rgba(255, 255, 255, 0.25);\n\tfont-family: \"BagekiLuxury\", serif;\n\n}\n"],"names":[],"sourceRoot":""}

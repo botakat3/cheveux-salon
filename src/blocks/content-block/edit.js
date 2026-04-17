@@ -6,7 +6,7 @@ import {
 } from "@wordpress/block-editor";
 import ContentBlockSettings from "./ContentBlockSettings.js";
 import "./editor.scss";
-import {COLOR_PRESETS} from "./color-presets.js";
+import {COLOR_PRESETS} from "../color-presets.js";
 
 export default function Edit({ attributes, setAttributes }) {
 	const {

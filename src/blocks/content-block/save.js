@@ -1,5 +1,5 @@
 import { RichText, useBlockProps } from "@wordpress/block-editor";
-import {COLOR_PRESETS} from "./color-presets.js";
+import {COLOR_PRESETS} from "../color-presets.js";
 
 export default function save({ attributes }) {
 	const {

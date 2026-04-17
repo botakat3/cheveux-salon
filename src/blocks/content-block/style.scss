@@ -34,7 +34,7 @@
 		width: 100%;
 		height: auto;
 		display: block;
-		border-radius: 16px;
+		//border-radius: 0px;
 	}
 
 	&__placeholder {
@@ -42,18 +42,21 @@
 		display: grid;
 		place-items: center;
 		border: 1px dashed #ccc;
-		border-radius: 16px;
+		//border-radius: 0px;
 	}
 
 	&__title {
 		font-size: clamp(2rem, 5vw, 4rem);
 		margin-bottom: 1rem;
+		font-family: "Bageki Luxury";
+		font-style: italic;
 	}
 
 	&__text {
 		font-size: 1.125rem;
 		line-height: 1.7;
 		margin: 0;
+		font-family: Poppins;
 	}
 }
 
