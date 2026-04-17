@@ -110,15 +110,16 @@ return array(
 		'apiVersion' => 3,
 		'name' => 'cheveux/about-hero',
 		'version' => '0.1.0',
-		'title' => 'About Hero',
+		'title' => 'Half image',
 		'category' => 'design',
 		'icon' => 'cover-image',
-		'description' => 'Hero section for Cheveux homepage',
+		'description' => 'Half image block',
 		'keywords' => array(
 			'add',
 			'hero',
 			'banner',
-			'about'
+			'about',
+			'image'
 		),
 		'example' => array(
 			

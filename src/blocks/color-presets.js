@@ -2,18 +2,18 @@ export const COLOR_PRESETS = {
 	light: {
 		label: "Light",
 		backgroundColor: "#fff5eb",
-		headingColor: "#2f3c6f",
-		textColor: "#1f2430",
+		headingColor: "#161A38",
+		textColor: "#161A38",
 	},
 	dark: {
 		label: "Dark",
-		backgroundColor: "#1f2430",
+		backgroundColor: "#00020F",
 		headingColor: "#fff5eb",
 		textColor: "#fff",
 	},
 	navy: {
 		label: "Navy",
-		backgroundColor: "#2f3c6f",
+		backgroundColor: "#161A38",
 		headingColor: "#f5f1eb",
 		textColor: "#f5f1eb",
 	},

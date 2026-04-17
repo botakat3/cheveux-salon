@@ -74,6 +74,10 @@ export default function Edit({ attributes, setAttributes }) {
 							onChange={(value) => setAttributes({ title: value })}
 							placeholder="Section Title"
 							style={{ color: colors.headingColor}}
+							allowedFormats={[
+								'core/bold',
+								'core/italic'
+							]}
 						/>
 
 						<RichText
@@ -82,6 +86,11 @@ export default function Edit({ attributes, setAttributes }) {
 							value={text}
 							onChange={(value) => setAttributes({ text: value })}
 							placeholder="Add your content here."
+							allowedFormats={[
+								'core/bold',
+								'core/italic',
+								'core/link',
+							]}
 						/>
 					</div>
 				</div>

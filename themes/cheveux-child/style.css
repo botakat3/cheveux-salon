@@ -55,3 +55,141 @@ Version: 1.0.0
 		height: 100%;
 	}
 }
+
+
+
+.cheveux-header {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: #00020F;
+	backdrop-filter: blur(10px);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+	&__inner {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		align-items: center;
+		gap: 2rem;
+		padding: 1rem 2rem;
+	}
+
+	&__logo {
+		font-family: "BagekiLuxury", serif;
+		font-size: 1.75rem;
+		text-decoration: none;
+		color: #fff;
+		letter-spacing: 0.06em;
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__button {
+		display: inline-block;
+		padding: 0.8rem 1.35rem;
+		border-radius: 999px;
+		text-decoration: none;
+		background: #fff;
+		color: #2f3c6f;
+		border: 1px solid #2f3c6f;
+		transition: 0.2s ease;
+	}
+
+	&__button:hover {
+		background: transparent;
+		color: #2f3c6f;
+	}
+}
+
+.cheveux-menu {
+	list-style: none;
+	display: flex;
+	gap: 2rem;
+	margin: 0;
+	padding: 0;
+
+	li {
+		margin: 0;
+	}
+
+	a {
+		text-decoration: none;
+		color: #fff;
+		font-size: 0.95rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+}
+
+.cheveux-footer {
+	background: #00020F;
+	color: #f5f1eb;
+	padding: 4rem 2rem 2rem;
+
+	&__inner {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+
+	&__top {
+		display: grid;
+		grid-template-columns: 1.2fr 1fr 1fr;
+		gap: 3rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+	}
+
+	&__title {
+		font-family: "BagekiLuxury", serif;
+		font-size: clamp(2rem, 4vw, 3rem);
+		margin-bottom: 1rem;
+	}
+
+	&__text {
+		max-width: 24rem;
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	&__bottom {
+		padding-top: 1.5rem;
+		font-size: 0.9rem;
+		opacity: 0.8;
+	}
+}
+
+.cheveux-footer-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li + li {
+		margin-top: 0.75rem;
+	}
+
+	a {
+		text-decoration: none;
+		color: #f5f1eb;
+	}
+}
+
+@media (max-width: 991px) {
+	.cheveux-header__inner {
+		grid-template-columns: 1fr;
+		justify-items: center;
+		text-align: center;
+	}
+
+	.cheveux-menu {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem 1.5rem;
+	}
+
+	.cheveux-footer__top {
+		grid-template-columns: 1fr;
+	}
+}

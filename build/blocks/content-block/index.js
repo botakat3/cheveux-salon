@@ -16,18 +16,18 @@ const COLOR_PRESETS = {
   light: {
     label: "Light",
     backgroundColor: "#fff5eb",
-    headingColor: "#2f3c6f",
-    textColor: "#1f2430"
+    headingColor: "#161A38",
+    textColor: "#161A38"
   },
   dark: {
     label: "Dark",
-    backgroundColor: "#1f2430",
+    backgroundColor: "#00020F",
     headingColor: "#fff5eb",
     textColor: "#fff"
   },
   navy: {
     label: "Navy",
-    backgroundColor: "#2f3c6f",
+    backgroundColor: "#161A38",
     headingColor: "#f5f1eb",
     textColor: "#f5f1eb"
   },
@@ -198,7 +198,8 @@ function Edit({
             placeholder: "Section Title",
             style: {
               color: colors.headingColor
-            }
+            },
+            allowedFormats: ['core/bold', 'core/italic']
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             tagName: "p",
             className: "content-section__text",
@@ -206,7 +207,8 @@ function Edit({
             onChange: value => setAttributes({
               text: value
             }),
-            placeholder: "Add your content here."
+            placeholder: "Add your content here.",
+            allowedFormats: ['core/bold', 'core/italic', 'core/link']
           })]
         })]
       })

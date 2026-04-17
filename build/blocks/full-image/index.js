@@ -16,18 +16,18 @@ const COLOR_PRESETS = {
   light: {
     label: "Light",
     backgroundColor: "#fff5eb",
-    headingColor: "#2f3c6f",
-    textColor: "#1f2430"
+    headingColor: "#161A38",
+    textColor: "#161A38"
   },
   dark: {
     label: "Dark",
-    backgroundColor: "#1f2430",
+    backgroundColor: "#00020F",
     headingColor: "#fff5eb",
     textColor: "#fff"
   },
   navy: {
     label: "Navy",
-    backgroundColor: "#2f3c6f",
+    backgroundColor: "#161A38",
     headingColor: "#f5f1eb",
     textColor: "#f5f1eb"
   },
@@ -448,7 +448,7 @@ module.exports = window["wp"]["components"];
   \******************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"cheveux/about-hero","version":"0.1.0","title":"About Hero","category":"design","icon":"cover-image","description":"Hero section for Cheveux homepage","keywords":["add","hero","banner","about"],"example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"high-pulp-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"eyebrow":{"type":"string","default":"About Cheveux"},"title":{"type":"string","default":"Effortless beauty with an elevated touch."},"text":{"type":"string","default":"Create a short introduction here to describe your salon, brand, or story."},"imageId":{"type":"number","default":0},"imageUrl":{"type":"string","default":""},"imageAlt":{"type":"string","default":""},"imagePosition":{"type":"string","default":"right"},"colorPreset":{"type":"string","default":"navy"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"cheveux/about-hero","version":"0.1.0","title":"Half image","category":"design","icon":"cover-image","description":"Half image block","keywords":["add","hero","banner","about","image"],"example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"high-pulp-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"eyebrow":{"type":"string","default":"About Cheveux"},"title":{"type":"string","default":"Effortless beauty with an elevated touch."},"text":{"type":"string","default":"Create a short introduction here to describe your salon, brand, or story."},"imageId":{"type":"number","default":0},"imageUrl":{"type":"string","default":""},"imageAlt":{"type":"string","default":""},"imagePosition":{"type":"string","default":"right"},"colorPreset":{"type":"string","default":"navy"}}}');
 
 /***/ }
 
