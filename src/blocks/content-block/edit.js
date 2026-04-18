@@ -75,9 +75,9 @@ export default function Edit({ attributes, setAttributes }) {
 										fill="none"
 									/>
 
-									<text>
+									<text style={{fill: colors.headingColor}}>
 										<textPath href="#circlePath">
-											MARKETING STRATEGIST • BUSINESS COACH •
+											KEEPING HAIR HEALTHY ONE STRAND AT A TIME •
 										</textPath>
 									</text>
 								</svg>

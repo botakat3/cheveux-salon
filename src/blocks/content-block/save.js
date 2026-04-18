@@ -37,23 +37,22 @@ export default function save({ attributes }) {
 					<div className="content-section__media">
 						<img src={imageUrl} alt={imageAlt}/>
 
-						<div className="circle-text"
-						>
+						<div className="circle-text">
 							<svg viewBox="0 0 200 200">
 								<path
 									id="circlePath"
-									d="M 100,100 m -95,0 a 95,95 0 1,1 170,0 a 95,95 0 1,1 -170,0"
+									d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"
 									fill="none"
 								/>
 
 								<text style={{fill: colors.headingColor}}>
 									<textPath href="#circlePath">
-										MARKETING STRATEGIST • BUSINESS COACH •
+										KEEPING HAIR HEALTHY ONE STRAND AT A TIME •
 									</textPath>
 								</text>
 							</svg>
 						</div>
-					</div>
+gi					</div>
 				)}
 
 				{/* TEXT CONTENT */}

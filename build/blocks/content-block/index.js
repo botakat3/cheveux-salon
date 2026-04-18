@@ -205,9 +205,12 @@ function Edit({
                 d: "M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0",
                 fill: "none"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("text", {
+                style: {
+                  fill: colors.headingColor
+                },
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textPath", {
                   href: "#circlePath",
-                  children: "MARKETING STRATEGIST \u2022 BUSINESS COACH \u2022"
+                  children: "KEEPING HAIR HEALTHY ONE STRAND AT A TIME \u2022"
                 })
               })]
             })
@@ -385,7 +388,7 @@ function save({
             viewBox: "0 0 200 200",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
               id: "circlePath",
-              d: "M 100,100 m -95,0 a 95,95 0 1,1 170,0 a 95,95 0 1,1 -170,0",
+              d: "M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0",
               fill: "none"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("text", {
               style: {
@@ -393,11 +396,11 @@ function save({
               },
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("textPath", {
                 href: "#circlePath",
-                children: "MARKETING STRATEGIST \u2022 BUSINESS COACH \u2022"
+                children: "KEEPING HAIR HEALTHY ONE STRAND AT A TIME \u2022"
               })
             })]
           })
-        })]
+        }), "gi     "]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "content-section__content",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
