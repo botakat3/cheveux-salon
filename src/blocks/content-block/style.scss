@@ -124,10 +124,10 @@
 //circle animation
 .circle-text {
 	position: absolute;
-	top: -40px;
-	right: -40px;
-	width: 140px;
-	height: 140px;
+	top: -100px;
+	right: -100px;
+	width: 200px;
+	height: 200px;
 	animation: spin 12s linear infinite reverse;
 	pointer-events: none;
 }

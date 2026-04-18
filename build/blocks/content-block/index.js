@@ -385,7 +385,7 @@ function save({
             viewBox: "0 0 200 200",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
               id: "circlePath",
-              d: "M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0",
+              d: "M 100,100 m -95,0 a 95,95 0 1,1 170,0 a 95,95 0 1,1 -170,0",
               fill: "none"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("text", {
               style: {

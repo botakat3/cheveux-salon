@@ -98,10 +98,10 @@
 }
 .circle-text {
   position: absolute;
-  top: -40px;
-  left: -40px;
-  width: 140px;
-  height: 140px;
+  top: -100px;
+  left: -100px;
+  width: 200px;
+  height: 200px;
   animation: spin 12s linear infinite reverse;
   pointer-events: none;
 }
