@@ -69,7 +69,8 @@ function ContentBlockSettings({
   const {
     hasImage,
     imagePosition,
-    colorPreset
+    colorPreset,
+    hasButton
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
@@ -90,6 +91,12 @@ function ContentBlockSettings({
       title: "Layout Settings",
       initialOpen: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+        label: "Show button",
+        checked: hasButton,
+        onChange: value => setAttributes({
+          hasButton: value
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
         label: "Show image",
         checked: hasImage,
         onChange: value => setAttributes({
@@ -146,9 +153,13 @@ function Edit({
     imagePosition,
     imageUrl,
     imageAlt,
+    eyebrow,
     title,
     text,
-    colorPreset
+    colorPreset,
+    hasButton,
+    buttonText,
+    buttonUrl
   } = attributes;
   const colors = _color_presets_js__WEBPACK_IMPORTED_MODULE_3__.COLOR_PRESETS[colorPreset] || _color_presets_js__WEBPACK_IMPORTED_MODULE_3__.COLOR_PRESETS.light;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
@@ -166,9 +177,9 @@ function Edit({
       ...blockProps,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "content-section__inner",
-        children: [hasImage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        children: [hasImage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "content-section__media",
-          children: imageUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+          children: [imageUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
             src: imageUrl,
             alt: imageAlt
           }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
@@ -185,10 +196,36 @@ function Edit({
               allowedTypes: ["image"],
               accept: "image/*"
             })
-          })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "circle-text",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+              viewBox: "0 0 200 200",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+                id: "circlePath",
+                d: "M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0",
+                fill: "none"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("text", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textPath", {
+                  href: "#circlePath",
+                  children: "MARKETING STRATEGIST \u2022 BUSINESS COACH \u2022"
+                })
+              })]
+            })
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "content-section__content",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+            tagName: "p",
+            className: "content-section__eyebrow",
+            value: eyebrow,
+            onChange: value => setAttributes({
+              eyebrow: value
+            }),
+            placeholder: "Add text here..",
+            style: {
+              color: colors.textColor
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             tagName: "h2",
             className: "content-section__title",
             value: title,
@@ -209,6 +246,26 @@ function Edit({
             }),
             placeholder: "Add your content here.",
             allowedFormats: ['core/bold', 'core/italic', 'core/link']
+          }), hasButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "cheveux-button-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "cheveux-button",
+              role: "button",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+                tagName: "span",
+                value: buttonText,
+                onChange: value => setAttributes({
+                  buttonText: value
+                }),
+                placeholder: "Button text",
+                allowedFormats: []
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.URLInputButton, {
+              url: buttonUrl,
+              onChange: url => setAttributes({
+                buttonUrl: url
+              })
+            })]
           })]
         })]
       })
@@ -298,9 +355,12 @@ function save({
     imagePosition,
     imageUrl,
     imageAlt,
+    eyebrow,
     title,
     text,
-    colorPreset
+    colorPreset,
+    hasButton,
+    buttonText
   } = attributes;
   const colors = _color_presets_js__WEBPACK_IMPORTED_MODULE_1__.COLOR_PRESETS[colorPreset] || _color_presets_js__WEBPACK_IMPORTED_MODULE_1__.COLOR_PRESETS.light;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
@@ -314,15 +374,40 @@ function save({
     ...blockProps,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "content-section__inner",
-      children: [hasImage && imageUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      children: [hasImage && imageUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "content-section__media",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: imageUrl,
           alt: imageAlt
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "circle-text",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
+            viewBox: "0 0 200 200",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+              id: "circlePath",
+              d: "M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0",
+              fill: "none"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("text", {
+              style: {
+                fill: colors.headingColor
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("textPath", {
+                href: "#circlePath",
+                children: "MARKETING STRATEGIST \u2022 BUSINESS COACH \u2022"
+              })
+            })]
+          })
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "content-section__content",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+          tagName: "p",
+          className: "content-section__eyebrow",
+          value: eyebrow,
+          style: {
+            color: colors.textColor
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
           tagName: "h2",
           className: "content-section__title",
           value: title,
@@ -333,6 +418,15 @@ function save({
           tagName: "p",
           className: "content-section__text",
           value: text
+        }), hasButton && buttonText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "cheveux-button-wrap",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "cheveux-button",
+            role: "button",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+              value: buttonText
+            })
+          })
         })]
       })]
     })
@@ -411,7 +505,7 @@ module.exports = window["wp"]["components"];
   \*********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"cheveux/content-block","version":"0.1.0","title":"Content Block","category":"design","icon":"align-pull-left","description":"Use this block to add your content! Flexible block with image and layout switching options.","keywords":["content","add"],"example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"high-pulp-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"hasImage":{"type":"boolean","default":true},"imagePosition":{"type":"string","default":"left"},"imageUrl":{"type":"string","default":""},"imageId":{"type":"number","default":0},"imageAlt":{"type":"string","default":""},"title":{"type":"string","default":"Section Title"},"colorPreset":{"type":"string","default":"light"},"text":{"type":"string","default":"Add your content here."}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"cheveux/content-block","version":"0.1.0","title":"Content Block","category":"design","icon":"align-pull-left","description":"Use this block to add your content! Flexible block with image and layout switching options.","keywords":["content","add"],"example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"high-pulp-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"hasImage":{"type":"boolean","default":true},"imagePosition":{"type":"string","default":"left"},"imageUrl":{"type":"string","default":""},"imageId":{"type":"number","default":0},"imageAlt":{"type":"string","default":""},"title":{"type":"string","default":"Section Title"},"colorPreset":{"type":"string","default":"light"},"eyebrow":{"type":"string","default":""},"text":{"type":"string","default":"Add your content here."},"hasButton":{"type":"boolean","default":false},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""}}}');
 
 /***/ }
 

@@ -200,9 +200,9 @@ function Edit({
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
             src: imageUrl,
             alt: imageAlt
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "about-hero__image-actions",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
                 allowedTypes: ["image"],
                 value: imageId,
@@ -219,15 +219,7 @@ function Edit({
                   children: "Replace image"
                 })
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-              variant: "tertiary",
-              onClick: () => setAttributes({
-                imageId: 0,
-                imageUrl: "",
-                imageAlt: ""
-              }),
-              children: "Remove image"
-            })]
+            })
           })]
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaPlaceholder, {
@@ -448,7 +440,7 @@ module.exports = window["wp"]["components"];
   \******************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"cheveux/about-hero","version":"0.1.0","title":"Half image","category":"design","icon":"cover-image","description":"Half image block","keywords":["add","hero","banner","about","image"],"example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"high-pulp-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"eyebrow":{"type":"string","default":"About Cheveux"},"title":{"type":"string","default":"Effortless beauty with an elevated touch."},"text":{"type":"string","default":"Create a short introduction here to describe your salon, brand, or story."},"imageId":{"type":"number","default":0},"imageUrl":{"type":"string","default":""},"imageAlt":{"type":"string","default":""},"imagePosition":{"type":"string","default":"right"},"colorPreset":{"type":"string","default":"navy"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"cheveux/about-hero","version":"0.1.0","title":"Half image","category":"design","icon":"cover-image","description":"Half image block","keywords":["add","hero","banner","about","image"],"example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"high-pulp-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"eyebrow":{"type":"string","default":"Add Text here"},"title":{"type":"string","default":"Effortless beauty with an elevated touch."},"text":{"type":"string","default":"Create a short introduction here to describe your salon, brand, or story."},"imageId":{"type":"number","default":0},"imageUrl":{"type":"string","default":""},"imageAlt":{"type":"string","default":""},"imagePosition":{"type":"string","default":"right"},"colorPreset":{"type":"string","default":"navy"}}}');
 
 /***/ }
 

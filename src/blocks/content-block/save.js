@@ -1,4 +1,4 @@
-import { RichText, useBlockProps } from "@wordpress/block-editor";
+import {RichText, useBlockProps} from "@wordpress/block-editor";
 import {COLOR_PRESETS} from "../color-presets.js";
 
 export default function save({ attributes }) {
@@ -7,9 +7,12 @@ export default function save({ attributes }) {
 		imagePosition,
 		imageUrl,
 		imageAlt,
+		eyebrow,
 		title,
 		text,
-		colorPreset
+		colorPreset,
+		hasButton,
+		buttonText,
 	} = attributes;
 
 	const colors = COLOR_PRESETS[colorPreset] || COLOR_PRESETS.light;
@@ -30,20 +33,43 @@ export default function save({ attributes }) {
 		<section {...blockProps}>
 			<div className="content-section__inner">
 
-				{/* IMAGE */}
 				{hasImage && imageUrl && (
 					<div className="content-section__media">
-						<img src={imageUrl} alt={imageAlt} />
+						<img src={imageUrl} alt={imageAlt}/>
+
+						<div className="circle-text"
+						>
+							<svg viewBox="0 0 200 200">
+								<path
+									id="circlePath"
+									d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"
+									fill="none"
+								/>
+
+								<text style={{fill: colors.headingColor}}>
+									<textPath href="#circlePath">
+										MARKETING STRATEGIST • BUSINESS COACH •
+									</textPath>
+								</text>
+							</svg>
+						</div>
 					</div>
 				)}
 
 				{/* TEXT CONTENT */}
 				<div className="content-section__content">
 					<RichText.Content
+						tagName="p"
+						className="content-section__eyebrow"
+						value={eyebrow}
+						style={{color: colors.textColor}}
+					/>
+
+					<RichText.Content
 						tagName="h2"
 						className="content-section__title"
 						value={title}
-						style={{ color: colors.headingColor}}
+						style={{color: colors.headingColor}}
 					/>
 
 					<RichText.Content
@@ -51,6 +77,19 @@ export default function save({ attributes }) {
 						className="content-section__text"
 						value={text}
 					/>
+
+					{hasButton && buttonText && (
+						<div className="cheveux-button-wrap">
+							<div className="cheveux-button" role="button">
+								<RichText.Content value={buttonText}/>
+							</div>
+
+
+						</div>
+
+					)}
+
+
 				</div>
 
 			</div>

@@ -99,9 +99,25 @@ return array(
 				'type' => 'string',
 				'default' => 'light'
 			),
+			'eyebrow' => array(
+				'type' => 'string',
+				'default' => ''
+			),
 			'text' => array(
 				'type' => 'string',
 				'default' => 'Add your content here.'
+			),
+			'hasButton' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'buttonText' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'buttonUrl' => array(
+				'type' => 'string',
+				'default' => ''
 			)
 		)
 	),
@@ -139,7 +155,7 @@ return array(
 		'attributes' => array(
 			'eyebrow' => array(
 				'type' => 'string',
-				'default' => 'About Cheveux'
+				'default' => 'Add Text here'
 			),
 			'title' => array(
 				'type' => 'string',

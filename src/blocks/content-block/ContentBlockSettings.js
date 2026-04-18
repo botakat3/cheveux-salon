@@ -12,6 +12,7 @@ export default function ContentBlockSettings({ attributes, setAttributes }) {
 		hasImage,
 		imagePosition,
 		colorPreset,
+		hasButton
 	} = attributes;
 
 	return (
@@ -29,11 +30,19 @@ export default function ContentBlockSettings({ attributes, setAttributes }) {
 			</PanelBody>
 
 			<PanelBody title="Layout Settings" initialOpen={true}>
+
+				<ToggleControl
+					label="Show button"
+					checked={hasButton}
+					onChange={(value) => setAttributes({ hasButton: value })}
+				/>
+
 				<ToggleControl
 					label="Show image"
 					checked={hasImage}
 					onChange={(value) => setAttributes({ hasImage: value })}
 				/>
+
 
 				{hasImage && (
 					<SelectControl

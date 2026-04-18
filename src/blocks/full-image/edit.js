@@ -91,20 +91,10 @@ export default function Edit({ attributes, setAttributes }) {
 											</Button>
 										)}
 									/>
+
 								</MediaUploadCheck>
 
-								<Button
-									variant="tertiary"
-									onClick={() =>
-										setAttributes({
-											imageId: 0,
-											imageUrl: "",
-											imageAlt: "",
-										})
-									}
-								>
-									Remove image
-								</Button>
+
 							</div>
 						</>
 					) : (

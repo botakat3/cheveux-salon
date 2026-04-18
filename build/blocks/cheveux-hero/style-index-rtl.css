@@ -16,13 +16,14 @@
   font-size: clamp(7rem, 16vw, 14rem);
   font-style: italic;
   line-height: 0.55;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   margin-top: auto;
   color: #fff5eb;
 }
 
 .cheveux-hero__quote {
   margin-bottom: 4rem;
+  font-family: Poppins, serif;
 }
 
 .cheveux-hero__inner {

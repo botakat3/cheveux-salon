@@ -2,7 +2,7 @@ import {
 	useBlockProps,
 	RichText,
 	MediaPlaceholder,
-	MediaUploadCheck,
+	MediaUploadCheck, URLInput, URLInputButton,
 } from "@wordpress/block-editor";
 import ContentBlockSettings from "./ContentBlockSettings.js";
 import "./editor.scss";
@@ -14,9 +14,13 @@ export default function Edit({ attributes, setAttributes }) {
 		imagePosition,
 		imageUrl,
 		imageAlt,
+		eyebrow,
 		title,
 		text,
-		colorPreset
+		colorPreset,
+		hasButton,
+		buttonText,
+		buttonUrl,
 	} = attributes;
 
 	const colors = COLOR_PRESETS[colorPreset] || COLOR_PRESETS.light;
@@ -45,12 +49,12 @@ export default function Edit({ attributes, setAttributes }) {
 					{hasImage && (
 						<div className="content-section__media">
 							{imageUrl ? (
-								<img src={imageUrl} alt={imageAlt} />
+								<img src={imageUrl} alt={imageAlt}/>
 							) : (
 								<MediaUploadCheck>
 									<MediaPlaceholder
 										icon="format-image"
-										labels={{ title: "Content image" }}
+										labels={{title: "Content image"}}
 										onSelect={(media) =>
 											setAttributes({
 												imageId: media?.id || 0,
@@ -63,10 +67,35 @@ export default function Edit({ attributes, setAttributes }) {
 									/>
 								</MediaUploadCheck>
 							)}
+							<div className="circle-text">
+								<svg viewBox="0 0 200 200">
+									<path
+										id="circlePath"
+										d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"
+										fill="none"
+									/>
+
+									<text>
+										<textPath href="#circlePath">
+											MARKETING STRATEGIST • BUSINESS COACH •
+										</textPath>
+									</text>
+								</svg>
+							</div>
 						</div>
 					)}
 
 					<div className="content-section__content">
+
+						<RichText
+							tagName="p"
+							className="content-section__eyebrow"
+							value={eyebrow}
+							onChange={(value) => setAttributes({eyebrow: value})}
+							placeholder="Add text here.."
+							style={{color: colors.textColor}}
+						/>
+
 						<RichText
 							tagName="h2"
 							className="content-section__title"
@@ -92,6 +121,28 @@ export default function Edit({ attributes, setAttributes }) {
 								'core/link',
 							]}
 						/>
+
+						{hasButton && (
+							<div className="cheveux-button-wrap"
+							>
+								<div className="cheveux-button" role="button" >
+									<RichText
+										tagName="span"
+										value={buttonText}
+										onChange={(value) => setAttributes({ buttonText: value })}
+										placeholder="Button text"
+										allowedFormats={[]}
+
+									/>
+								</div>
+
+								<URLInputButton
+									url={buttonUrl}
+									onChange={(url) => setAttributes({ buttonUrl: url })}
+								/>
+							</div>
+						)}
+
 					</div>
 				</div>
 			</section>

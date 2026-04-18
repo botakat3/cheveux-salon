@@ -1,0 +1,1 @@
+{"version":3,"file":"blocks/content-block/index.css","mappings":";;;AAAA;EACC;AACD,C","sources":["webpack://high-pulp-blocks/./src/blocks/content-block/editor.scss"],"sourcesContent":[".circle-text {\n\tcursor: text;\n}\n"],"names":[],"sourceRoot":""}

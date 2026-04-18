@@ -53,9 +53,25 @@
       "type": "string",
       "default": "light"
     },
+    "eyebrow": {
+      "type": "string",
+      "default": ""
+    },
     "text": {
       "type": "string",
       "default": "Add your content here."
+    },
+    "hasButton": {
+      "type": "boolean",
+      "default": false
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": ""
     }
   }
 }

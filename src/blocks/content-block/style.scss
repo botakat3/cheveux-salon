@@ -1,12 +1,23 @@
 .content-section {
 	padding: 4rem 2rem;
 
+
 	&__inner {
 		max-width: 1200px;
 		margin: 0 auto;
 		display: grid;
 		gap: 2rem;
 		align-items: center;
+
+	}
+
+	&__media {
+		position: relative;
+	}
+
+	&__content {
+		padding: clamp(2.5rem, 6vw, 5rem);
+
 	}
 
 	&--image-left &__inner {
@@ -23,6 +34,7 @@
 
 	&--image-right &__content {
 		order: 1;
+
 	}
 
 	&--text-only &__inner {
@@ -45,6 +57,16 @@
 		//border-radius: 0px;
 	}
 
+	&__eyebrow {
+		font-size: 0.75rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		margin-bottom: 1rem;
+		font-weight: 600;
+		font-family: Poppins, serif;
+
+	}
+
 	&__title {
 		font-size: clamp(2rem, 5vw, 4rem);
 		margin-bottom: 1rem;
@@ -54,9 +76,9 @@
 
 	&__text {
 		font-size: 1.125rem;
-		line-height: 1.7;
+		line-height: 1.8;
 		margin: 0;
-		font-family: Poppins;
+		font-family: Poppins, serif;
 	}
 }
 
@@ -69,5 +91,67 @@
 	.content-section--image-right .content-section__media,
 	.content-section--image-right .content-section__content {
 		order: initial;
+	}
+}
+
+.cheveux-button {
+	display: inline-block;
+	margin-top: 3.5rem;
+	padding: 1.1rem 5.5rem;
+	border-radius: 999px;
+	text-decoration: none;
+	border: 1px solid currentColor;
+	color: #fff;
+	background: #2f3c6f;
+	transition: all 0.2s ease;
+
+	font-size: 1rem;
+	letter-spacing: 0.08em;
+}
+
+.cheveux-button:hover {
+	transform: translateY(-1px);
+}
+
+.cheveux-button__wrap {
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
+	margin-top: 5rem;
+}
+
+
+//circle animation
+.circle-text {
+	position: absolute;
+	top: -40px;
+	right: -40px;
+	width: 140px;
+	height: 140px;
+	animation: spin 12s linear infinite reverse;
+	pointer-events: none;
+}
+
+.circle-text svg {
+	width: 100%;
+	height: 100%;
+}
+
+.circle-text text {
+	font-size: 1.5rem;
+	letter-spacing: 0.2em;
+	//fill: #fff;
+	text-transform: uppercase;
+	font-family: "Bageki Luxury";
+	font-weight: bold;
+
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
 	}
 }
