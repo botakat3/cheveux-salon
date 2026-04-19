@@ -41,18 +41,17 @@ export default function save({ attributes }) {
 							<svg viewBox="0 0 200 200">
 								<path
 									id="circlePath"
-									d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"
+									d="M 100,100 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"
 									fill="none"
 								/>
 
 								<text style={{fill: colors.headingColor}}>
 									<textPath href="#circlePath">
-										KEEPING HAIR HEALTHY ONE STRAND AT A TIME •
+										KEEPING HAIR HEALTHY • ONE STRAND AT A TIME •
 									</textPath>
 								</text>
 							</svg>
-						</div>
-gi					</div>
+						</div>					</div>
 				)}
 
 				{/* TEXT CONTENT */}

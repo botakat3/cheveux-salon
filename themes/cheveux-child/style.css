@@ -30,6 +30,7 @@ Version: 1.0.0
 
 
 
+
 .cheveux-page-header {
 	background: #f6f0e8;
 	text-align: center;
@@ -58,72 +59,115 @@ Version: 1.0.0
 
 
 
+/* NAVBAR */
 .cheveux-header {
-	position: sticky;
-	top: 0;
-	z-index: 1000;
 	background: #00020F;
-	backdrop-filter: blur(10px);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-
-	&__inner {
-		display: grid;
-		grid-template-columns: auto 1fr auto;
-		align-items: center;
-		gap: 2rem;
-		padding: 1rem 2rem;
-	}
-
-	&__logo {
-		font-family: "BagekiLuxury", serif;
-		font-size: 1.75rem;
-		text-decoration: none;
-		color: #fff;
-		letter-spacing: 0.06em;
-	}
-
-	&__nav {
-		display: flex;
-		justify-content: center;
-	}
-
-	&__button {
-		display: inline-block;
-		padding: 0.8rem 1.35rem;
-		border-radius: 999px;
-		text-decoration: none;
-		background: #fff;
-		color: #2f3c6f;
-		border: 1px solid #2f3c6f;
-		transition: 0.2s ease;
-	}
-
-	&__button:hover {
-		background: transparent;
-		color: #2f3c6f;
-	}
 }
 
-.cheveux-menu {
-	list-style: none;
-	display: flex;
-	gap: 2rem;
-	margin: 0;
+.cheveux-navbar-container {
+	padding: 1rem 5.75rem;
+}
+
+.navbar-dark {
 	padding: 0;
+}
 
-	li {
-		margin: 0;
+.cheveux-navbar-brand {
+	color: #fff;
+	font-family: "BagekiLuxury", serif;
+	font-size: 2rem;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	line-height: 1;
+}
+
+.cheveux-navbar-brand:hover {
+	color: #fff;
+}
+
+.cheveux-navbar-brand img {
+	max-height: 56px;
+	width: auto;
+	display: block;
+}
+
+.cheveux-navbar-nav {
+	gap: 2.5rem;
+}
+
+.cheveux-navbar-nav .menu-item {
+	list-style: none;
+}
+
+.cheveux-navbar-nav .menu-item a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 1rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	padding: 0;
+	line-height: 1;
+}
+
+.cheveux-navbar-nav .menu-item a:hover {
+	color: #fff;
+	opacity: 0.7;
+}
+
+.cheveux-book-btn {
+	background: #e9dfd2;
+	color: #111;
+	border-radius: 9999px;
+	padding: .75rem 2rem;
+	font-size: 1rem;
+	font-weight: 500;
+	border: none;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.cheveux-book-btn:hover {
+	background: #e9dfd2;
+	color: #111;
+	opacity: 0.9;
+}
+
+.navbar-nav  .nav-link {
+	padding: 0 !important;
+}
+
+.navbar-collapse {
+	flex-grow: 0;
+}
+
+.navbar-toggler {
+	border: 0;
+	box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+}
+
+@media (max-width: 991px) {
+	.cheveux-header {
+		padding: .5rem 3.75rem;
 	}
 
-	a {
-		text-decoration: none;
-		color: #fff;
-		font-size: 0.95rem;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
+	.cheveux-navbar-nav {
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+
+
+	.cheveux-book-btn {
+		display: block;
+		text-align: center;
 	}
 }
 
+
+/* FOOTER */
 .cheveux-footer {
 	background: #00020F;
 	color: #f5f1eb;

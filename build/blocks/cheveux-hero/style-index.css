@@ -5,7 +5,7 @@
   width: 100%;
   display: flex;
   align-items: flex-end;
-  padding: 6rem 2rem 0 2rem;
+  padding: 2.75rem 2rem 0 2rem;
   background: #161A38;
   color: #fff;
   text-align: center;
@@ -13,17 +13,18 @@
 
 .cheveux-hero__title {
   font-family: "BagekiLuxury", serif;
-  font-size: clamp(7rem, 16vw, 14rem);
+  font-size: clamp(7rem, 20vw, 20rem);
   font-style: italic;
-  line-height: 0.55;
+  line-height: 0.6;
   letter-spacing: 0.09em;
-  margin-top: auto;
+  margin-top: 3rem;
   color: #fff5eb;
 }
 
 .cheveux-hero__quote {
-  margin-bottom: 4rem;
   font-family: Poppins, serif;
+  font-style: italic;
+  font-weight: 200;
 }
 
 .cheveux-hero__inner {
