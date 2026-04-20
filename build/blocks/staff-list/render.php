@@ -13,7 +13,7 @@
 
 
 $query = new WP_Query([
-	'post_type' => 'staff',
+	'post_type' => 'stylist',
 	'orderby' => 'title',
 	'order' => 'ASC',
 ])
@@ -30,12 +30,10 @@ $query = new WP_Query([
 			<div class="flip-card-front">
 				<?= get_the_post_thumbnail() ?>
 			</div>
-			<div class="flip-card-back" style="background-color: <?= $attributes['cardColor']?>">
+			<div class="flip-card-back p-5" style="background-color: <?= $attributes['cardColor']?>">
 				<h3 class="name" style="color: <?= $attributes['headingColor']?>"><?= get_the_title() ?></h3>
 				<div class="position" style="color: <?= $attributes['textColor']?>"><?= get_post_meta(get_the_ID(), 'position', true) ?></div>
-				<div class="bio" style="color: <?= $attributes['textColor']?>">
-					<?= get_the_content() ?>
-				</div>
+
 			</div>
 		</div>
 	</div>

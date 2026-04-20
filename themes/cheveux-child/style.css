@@ -29,7 +29,9 @@ Version: 1.0.0
 }
 
 
-
+p{
+	font-family: Poppins, serif;
+}
 
 .cheveux-page-header {
 	background: #f6f0e8;
@@ -55,6 +57,42 @@ Version: 1.0.0
 		background: #f8f6f2;
 		height: 100%;
 	}
+}
+
+
+.stylist-profile {
+	
+	.stylist-name {
+		font-size: clamp(2rem, 4vw, 3.5rem);
+		font-weight: 700;
+		font-family: "Bageki Luxury";
+		letter-spacing: .75rem;
+	}
+
+	.stylist-position {
+		font-size: 1rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		opacity: 0.75;
+	}
+
+	.stylist-main-image {
+		aspect-ratio: 4 / 5;
+		object-fit: cover;
+	}
+
+	.stylist-tag {
+		background-color: #2f3c6f;
+		color: #f5f1eb;
+		padding: 0.6rem 1rem;
+		font-weight: 500;
+	}
+
+	.quick-fact-card {
+		background: #faf7f8;
+		border: 1px solid #eee;
+	}
+
 }
 
 
