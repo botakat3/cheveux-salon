@@ -39,6 +39,10 @@ return array(
 			'title' => array(
 				'type' => 'string',
 				'default' => 'CHEVEUX'
+			),
+			'logoUrl' => array(
+				'type' => 'string',
+				'default' => ''
 			)
 		)
 	),

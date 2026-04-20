@@ -34,6 +34,10 @@
     "title": {
       "type": "string",
       "default": "CHEVEUX"
+    },
+    "logoUrl": {
+      "type": "string",
+      "default": ""
     }
   }
 }

@@ -61,7 +61,7 @@ p{
 
 
 .stylist-profile {
-	
+
 	.stylist-name {
 		font-size: clamp(2rem, 4vw, 3.5rem);
 		font-weight: 700;
@@ -106,6 +106,13 @@ p{
 	padding: 1rem 5.75rem;
 }
 
+.custom-logo-link img,
+.custom-logo {
+	width: 160px;
+	height: auto;
+	display: block;
+	max-width: 100%;
+}
 .navbar-dark {
 	padding: 0;
 }
@@ -154,14 +161,15 @@ p{
 }
 
 .cheveux-book-btn {
-	background: #e9dfd2;
-	color: #111;
+	background: #161A38;
+	color: #fff;
 	border-radius: 9999px;
-	padding: .75rem 2rem;
+	padding: 1.1rem 3rem;
 	font-size: 1rem;
 	font-weight: 500;
 	border: none;
 	line-height: 1;
+	outline: #f5f1eb solid .5px;
 	white-space: nowrap;
 }
 
@@ -273,5 +281,128 @@ p{
 
 	.cheveux-footer__top {
 		grid-template-columns: 1fr;
+	}
+}
+
+
+/* Formidable form wrapper */
+.frm_forms {
+	.frm_form_fields {
+		display: grid;
+		gap: 1.25rem;
+	}
+
+	.frm_form_field {
+		margin-bottom: 0;
+	}
+
+	/* Labels */
+	label,
+	.frm_primary_label {
+		display: block;
+		margin-bottom: 0.5rem;
+		font-size: 0.95rem;
+		font-weight: 500;
+		color: #2f1f25;
+		letter-spacing: 0.03em;
+	}
+
+	/* Inputs */
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="url"],
+	select,
+	textarea {
+		width: 100%;
+		border: 1px solid #e7d8dc;
+		border-radius: 999px;
+		padding: 0.9rem 1.1rem;
+		background: #fffaf7;
+		color: #2f1f25;
+		font-size: 1rem;
+		box-shadow: none;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+	}
+
+	textarea {
+		border-radius: 1.5rem;
+		min-height: 140px;
+		resize: vertical;
+	}
+
+	input:focus,
+	select:focus,
+	textarea:focus {
+		outline: none;
+		border-color: #c9a8b3;
+		background: #ffffff;
+		box-shadow: 0 0 0 3px rgba(201, 168, 179, 0.15);
+	}
+
+	/* Placeholders */
+	input::placeholder,
+	textarea::placeholder {
+		color: #a68f97;
+	}
+
+	/* Submit button */
+	.frm_button_submit,
+	button[type="submit"],
+	input[type="submit"] {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: none;
+		border-radius: 999px;
+		padding: 0.9rem 1.6rem;
+		background: #2f1f25;
+		color: #fff5eb;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+	}
+
+	.frm_button_submit:hover,
+	button[type="submit"]:hover,
+	input[type="submit"]:hover {
+		opacity: 0.95;
+		transform: translateY(-1px);
+	}
+
+	/* Validation / errors */
+	.frm_error,
+	.frm_error_style {
+		color: #a33a4b;
+		font-size: 0.9rem;
+		margin-top: 0.35rem;
+	}
+
+	.frm_blank_field input,
+	.frm_blank_field textarea,
+	.frm_blank_field select,
+	.frm_error_field input,
+	.frm_error_field textarea,
+	.frm_error_field select {
+		border-color: #d08798;
+	}
+
+	/* Description/help text */
+	.frm_description,
+	.frm_html_container {
+		font-size: 0.9rem;
+		color: #7a6870;
+	}
+
+	/* Checkbox + radio */
+	input[type="checkbox"],
+	input[type="radio"] {
+		margin-right: 0.5rem;
+	}
+
+	.frm_checkbox,
+	.frm_radio {
+		margin-bottom: 0.5rem;
 	}
 }

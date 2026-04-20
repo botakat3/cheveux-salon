@@ -25,6 +25,7 @@
 					<?php else : ?>
 						<?php bloginfo( 'name' ); ?>
 					<?php endif; ?>
+
 				</a>
 
 				<button

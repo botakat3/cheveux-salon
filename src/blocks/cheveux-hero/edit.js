@@ -1,6 +1,5 @@
 import {
 	RichText,
-	URLInputButton,
 	useBlockProps,
 } from "@wordpress/block-editor";
 import "./editor.scss";

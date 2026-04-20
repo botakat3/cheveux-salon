@@ -22,14 +22,27 @@ $products   = get_field( 'products' );
 
 	<div class="wrapper" id="single-stylist-wrapper">
 		<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+
 			<div class="row">
 
 				<div class="col-md-12 content-area" id="primary">
 					<main class="site-main" id="main">
 
+
 						<?php while ( have_posts() ) : the_post(); ?>
 
 							<article <?php post_class( 'stylist-profile py-5' ); ?> id="post-<?php the_ID(); ?>">
+								<nav class="breadcrumbs mb-3">
+									<a href="<?php echo esc_url( home_url() ); ?>">Home</a>
+									<span>›</span>
+
+									<a href="<?php echo esc_url( home_url( '/stylist-directory/' ) ); ?>">
+										Stylists
+									</a>
+									<span>›</span>
+
+									<span><?php the_title(); ?></span>
+								</nav>
 
 								<div class="row g-5 align-items-start">
 
@@ -72,7 +85,7 @@ $products   = get_field( 'products' );
 												<?php if ( $services ) : ?>
 													<div class="col-md-6">
 														<div class="quick-fact-card p-3 rounded-4 h-100">
-															<h5>Go-To Product</h5>
+															<h5>Favorite Service</h5>
 															<p class="mb-0"><?php echo esc_html( $services ); ?></p>
 														</div>
 													</div>

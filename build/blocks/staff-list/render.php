@@ -34,6 +34,10 @@ $query = new WP_Query([
 				<h3 class="name" style="color: <?= $attributes['headingColor']?>"><?= get_the_title() ?></h3>
 				<div class="position" style="color: <?= $attributes['textColor']?>"><?= get_post_meta(get_the_ID(), 'position', true) ?></div>
 
+				<a href="<?php echo esc_url( get_permalink() ); ?>"
+				   class="btn btn-primary rounded-pill w-100 mt-2">
+					View Profile
+				</a>
 			</div>
 		</div>
 	</div>
