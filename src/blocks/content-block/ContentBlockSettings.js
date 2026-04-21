@@ -12,7 +12,10 @@ export default function ContentBlockSettings({ attributes, setAttributes }) {
 		hasImage,
 		imagePosition,
 		colorPreset,
-		hasButton
+		hasButton,
+		showCircleText,
+		circlePosition
+
 	} = attributes;
 
 	return (
@@ -55,7 +58,26 @@ export default function ContentBlockSettings({ attributes, setAttributes }) {
 						onChange={(value) => setAttributes({ imagePosition: value })}
 					/>
 				)}
+
+				<ToggleControl
+					label="Show spinning circle text"
+					checked={showCircleText}
+					onChange={(value) => setAttributes({ showCircleText: value })}
+				/>
+				{hasImage && showCircleText && (
+					<SelectControl
+						label="Circle text position"
+						value={circlePosition}
+						options={[
+							{ label: "Top left", value: "top-left" },
+							{ label: "Top right", value: "top-right" },
+						]}
+						onChange={(value) => setAttributes({ circlePosition: value })}
+					/>
+				)}
 			</PanelBody>
+
+
 		</InspectorControls>
 	);
 }

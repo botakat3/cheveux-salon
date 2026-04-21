@@ -66,6 +66,14 @@
 		"buttonUrl": {
 			"type": "string",
 			"default": ""
+		},
+		"showCircleText": {
+			"type": "boolean",
+			"default": true
+		},
+		"circlePosition": {
+			"type": "string",
+			"default": "bottom-right"
 		}
 	}
 }

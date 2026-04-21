@@ -19,7 +19,7 @@ export const COLOR_PRESETS = {
 	},
 	accent: {
 		label: "Accent",
-		backgroundColor: "#607288",
+		backgroundColor: "#343D54",
 		headingColor: "#f5f1eb",
 		textColor: "#fff",
 	}

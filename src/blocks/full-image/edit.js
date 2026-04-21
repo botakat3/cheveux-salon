@@ -71,7 +71,7 @@ export default function Edit({ attributes, setAttributes }) {
 				<div className="about-hero__image">
 					{imageUrl ? (
 						<>
-							<img src={imageUrl} alt={imageAlt} />
+							<img src={imageUrl} alt={imageAlt}/>
 
 							<div className="about-hero__image-actions">
 								<MediaUploadCheck>
@@ -85,23 +85,34 @@ export default function Edit({ attributes, setAttributes }) {
 												imageAlt: media?.alt || "",
 											})
 										}
-										render={({ open }) => (
+										render={({open}) => (
 											<Button variant="secondary" onClick={open}>
 												Replace image
 											</Button>
 										)}
 									/>
-
 								</MediaUploadCheck>
 
-
+								<Button
+									variant="link"
+									isDestructive
+									onClick={() =>
+										setAttributes({
+											imageId: 0,
+											imageUrl: "",
+											imageAlt: "",
+										})
+									}
+								>
+									Remove image
+								</Button>
 							</div>
 						</>
 					) : (
 						<MediaUploadCheck>
 							<MediaPlaceholder
 								icon="format-image"
-								labels={{ title: "Hero image" }}
+								labels={{title: "Hero image"}}
 								onSelect={(media) =>
 									setAttributes({
 										imageId: media?.id || 0,
@@ -114,8 +125,7 @@ export default function Edit({ attributes, setAttributes }) {
 							/>
 						</MediaUploadCheck>
 					)}
-				</div>
-			</section>
+				</div>			</section>
 		</>
 	);
 }

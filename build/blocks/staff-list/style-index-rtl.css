@@ -2,64 +2,87 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/staff-list/style.scss ***!
   \*********************************************************************************************************************************************************************************************************************************************************/
 .wp-block-tk-staff-list {
-  padding: 10px;
+  padding: clamp(2.5rem, 6vw, 5rem);
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.wp-block-tk-staff-list h3 {
+  font-family: "Bageki Luxury", serif;
+  letter-spacing: 0.08em;
 }
 .wp-block-tk-staff-list .flip-card {
-  display: block;
-  background-color: transparent;
-  width: 250px;
-  height: 250px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px;
-  margin: 5px;
+  width: 280px;
+  height: 360px;
+  perspective: 1200px;
+  background: transparent;
+  border: 0;
 }
-.wp-block-tk-staff-list .flip-card .flip-card-inner {
+.wp-block-tk-staff-list .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
   transform-style: preserve-3d;
-}
-.wp-block-tk-staff-list .flip-card .flip-card-inner .flip-card-front, .wp-block-tk-staff-list .flip-card .flip-card-inner .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%; /* Safari */
-  backface-visibility: hidden;
-}
-.wp-block-tk-staff-list .flip-card .flip-card-inner .flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-.wp-block-tk-staff-list .flip-card .flip-card-inner .flip-card-front img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-.wp-block-tk-staff-list .flip-card .flip-card-inner .flip-card-back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+  border-radius: 1.5rem;
 }
 .wp-block-tk-staff-list .flip-card:hover .flip-card-inner {
   transform: rotateY(-180deg);
 }
-.wp-block-tk-staff-list .flip-card .name {
-  font-weight: bold;
-  margin-bottom: 0;
+.wp-block-tk-staff-list .flip-card-front,
+.wp-block-tk-staff-list .flip-card-back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  backface-visibility: hidden;
 }
-.wp-block-tk-staff-list .flip-card .position {
-  margin: 0;
+.wp-block-tk-staff-list .flip-card-front {
+  background: #ddd;
 }
-.wp-block-tk-staff-list .flip-card .bio {
-  margin: 10px;
-  padding: 10px;
-  border-top: 2px solid rgba(0, 0, 0, 0.4666666667);
+.wp-block-tk-staff-list .flip-card-front img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.wp-block-tk-staff-list .flip-card-back {
+  background-color: #161a38;
+  color: #fff;
+  transform: rotateY(-180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   text-align: right;
+  padding: 1.5rem;
 }
-.wp-block-tk-staff-list .flip-card p {
-  margin: 0 0 10px 0;
+.wp-block-tk-staff-list .name {
+  font-family: "Bageki Luxury", serif;
+  font-size: 1.75rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.wp-block-tk-staff-list .position {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.wp-block-tk-staff-list .btn {
+  margin-top: auto;
+  background-color: #fff5eb;
+  color: #00020f;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
 }

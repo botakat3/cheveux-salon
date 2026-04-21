@@ -4,3 +4,11 @@
 .circle-text {
   cursor: text;
 }
+
+.content-section__image-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}

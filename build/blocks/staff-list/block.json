@@ -18,17 +18,9 @@
   "render": "file:./render.php",
   "viewScript": "file:./view.js",
   "attributes": {
-    "cardColor": {
+    "colorPreset": {
       "type": "string",
-      "default": "#000000"
-    },
-    "headingColor": {
-      "type": "string",
-      "default": "#ffffff"
-    },
-    "textColor": {
-      "type": "string",
-      "default": "#ffffff"
+      "default": "navy"
     }
   }
 }

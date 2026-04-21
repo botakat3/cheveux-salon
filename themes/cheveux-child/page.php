@@ -1,27 +1,20 @@
 <?php
+/**
+ * Template Name: Blank Full Width
+ */
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-		<?php
-		while ( have_posts() ) :
-			the_post();
+	<div id="primary" class="content-area w-100">
+		<main id="main" class="site-main w-100">
+
+			<?php
+			while ( have_posts() ) : the_post();
+				the_content();
+			endwhile;
 			?>
 
-			<?php get_template_part( 'template-parts/page', 'header' ); ?>
+		</main>
+	</div>
 
-			<section class="cheveux-page-content py-5">
-				<div class="container">
-					<div class="entry-content">
-						<?php the_content(); ?>
-					</div>
-				</div>
-			</section>
-
-		<?php
-		endwhile;
-		?>
-	</main>
-
-<?php
-get_footer();
+<?php get_footer(); ?>

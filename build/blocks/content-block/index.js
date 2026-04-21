@@ -33,7 +33,7 @@ const COLOR_PRESETS = {
   },
   accent: {
     label: "Accent",
-    backgroundColor: "#607288",
+    backgroundColor: "#343D54",
     headingColor: "#f5f1eb",
     textColor: "#fff"
   }
@@ -70,7 +70,9 @@ function ContentBlockSettings({
     hasImage,
     imagePosition,
     colorPreset,
-    hasButton
+    hasButton,
+    showCircleText,
+    circlePosition
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
@@ -115,6 +117,25 @@ function ContentBlockSettings({
         onChange: value => setAttributes({
           imagePosition: value
         })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+        label: "Show spinning circle text",
+        checked: showCircleText,
+        onChange: value => setAttributes({
+          showCircleText: value
+        })
+      }), hasImage && showCircleText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+        label: "Circle text position",
+        value: circlePosition,
+        options: [{
+          label: "Top left",
+          value: "top-left"
+        }, {
+          label: "Top right",
+          value: "top-right"
+        }],
+        onChange: value => setAttributes({
+          circlePosition: value
+        })
       })]
     })]
   });
@@ -134,11 +155,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ContentBlockSettings_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ContentBlockSettings.js */ "./src/blocks/content-block/ContentBlockSettings.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/content-block/editor.scss");
-/* harmony import */ var _color_presets_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../color-presets.js */ "./src/blocks/color-presets.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ContentBlockSettings_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ContentBlockSettings.js */ "./src/blocks/content-block/ContentBlockSettings.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/content-block/editor.scss");
+/* harmony import */ var _color_presets_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../color-presets.js */ "./src/blocks/color-presets.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -153,15 +177,18 @@ function Edit({
     imagePosition,
     imageUrl,
     imageAlt,
+    imageId,
     eyebrow,
     title,
     text,
     colorPreset,
     hasButton,
     buttonText,
-    buttonUrl
+    buttonUrl,
+    showCircleText,
+    circlePosition
   } = attributes;
-  const colors = _color_presets_js__WEBPACK_IMPORTED_MODULE_3__.COLOR_PRESETS[colorPreset] || _color_presets_js__WEBPACK_IMPORTED_MODULE_3__.COLOR_PRESETS.light;
+  const colors = _color_presets_js__WEBPACK_IMPORTED_MODULE_4__.COLOR_PRESETS[colorPreset] || _color_presets_js__WEBPACK_IMPORTED_MODULE_4__.COLOR_PRESETS.light;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
     className: `content-section ${hasImage ? `content-section--image-${imagePosition}` : "content-section--text-only"} content-section--${colorPreset}`,
     style: {
@@ -169,21 +196,51 @@ function Edit({
       color: colors.textColor
     }
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ContentBlockSettings_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ContentBlockSettings_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
       attributes: attributes,
       setAttributes: setAttributes
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("section", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("section", {
       ...blockProps,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "content-section__inner",
-        children: [hasImage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        children: [hasImage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "content-section__media",
-          children: [imageUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-            src: imageUrl,
-            alt: imageAlt
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaPlaceholder, {
+          children: [imageUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+              src: imageUrl,
+              alt: imageAlt
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "content-section__image-actions",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
+                  onSelect: media => setAttributes({
+                    imageId: media?.id || 0,
+                    imageUrl: media?.url || "",
+                    imageAlt: media?.alt || ""
+                  }),
+                  allowedTypes: ["image"],
+                  render: ({
+                    open
+                  }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                    onClick: open,
+                    variant: "secondary",
+                    children: "Replace Image"
+                  })
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+                variant: "link",
+                isDestructive: true,
+                onClick: () => setAttributes({
+                  imageId: 0,
+                  imageUrl: "",
+                  imageAlt: ""
+                }),
+                children: "Remove Image"
+              })]
+            })]
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaPlaceholder, {
               icon: "format-image",
               labels: {
                 title: "Content image"
@@ -196,28 +253,28 @@ function Edit({
               allowedTypes: ["image"],
               accept: "image/*"
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "circle-text",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+          }), showCircleText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            className: `circle-text circle-text--${circlePosition}`,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("svg", {
               viewBox: "0 0 200 200",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
                 id: "circlePath",
                 d: "M 100,100 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0",
                 fill: "none"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("text", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("text", {
                 style: {
                   fill: colors.headingColor
                 },
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textPath", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textPath", {
                   href: "#circlePath",
                   children: "KEEPING HAIR HEALTHY \u2022 ONE STRAND AT A TIME \u2022"
                 })
               })]
             })
-          }), "      "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "content-section__content",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             tagName: "p",
             className: "content-section__eyebrow",
             value: eyebrow,
@@ -228,7 +285,7 @@ function Edit({
             style: {
               color: colors.textColor
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             tagName: "h2",
             className: "content-section__title",
             value: title,
@@ -240,7 +297,7 @@ function Edit({
               color: colors.headingColor
             },
             allowedFormats: ['core/bold', 'core/italic']
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
             tagName: "p",
             className: "content-section__text",
             value: text,
@@ -249,12 +306,12 @@ function Edit({
             }),
             placeholder: "Add your content here.",
             allowedFormats: ['core/bold', 'core/italic', 'core/link']
-          }), hasButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          }), hasButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "cheveux-button-wrap",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
               className: "cheveux-button",
               role: "button",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
                 tagName: "span",
                 value: buttonText,
                 onChange: value => setAttributes({
@@ -263,7 +320,7 @@ function Edit({
                 placeholder: "Button text",
                 allowedFormats: []
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.URLInputButton, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.URLInputButton, {
               url: buttonUrl,
               onChange: url => setAttributes({
                 buttonUrl: url
@@ -363,7 +420,10 @@ function save({
     text,
     colorPreset,
     hasButton,
-    buttonText
+    buttonText,
+    buttonUrl,
+    showCircleText,
+    circlePosition
   } = attributes;
   const colors = _color_presets_js__WEBPACK_IMPORTED_MODULE_1__.COLOR_PRESETS[colorPreset] || _color_presets_js__WEBPACK_IMPORTED_MODULE_1__.COLOR_PRESETS.light;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
@@ -382,8 +442,8 @@ function save({
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: imageUrl,
           alt: imageAlt
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "circle-text",
+        }), showCircleText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: `circle-text circle-text--${circlePosition}`,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
             viewBox: "0 0 200 200",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
@@ -400,7 +460,7 @@ function save({
               })
             })]
           })
-        }), "     "]
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "content-section__content",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
@@ -421,12 +481,15 @@ function save({
           tagName: "p",
           className: "content-section__text",
           value: text
-        }), hasButton && buttonText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        }), hasButton && buttonText && buttonUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "cheveux-button-wrap",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
             className: "cheveux-button",
-            role: "button",
+            href: buttonUrl,
+            target: "_blank",
+            rel: "noopener noreferrer",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
+              tagName: "span",
               value: buttonText
             })
           })
@@ -508,7 +571,7 @@ module.exports = window["wp"]["components"];
   \*********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"cheveux/content-block","version":"0.1.0","title":"Content Block","category":"design","icon":"align-pull-left","description":"Use this block to add your content! Flexible block with image and layout switching options.","keywords":["content","add"],"example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"high-pulp-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"hasImage":{"type":"boolean","default":true},"imagePosition":{"type":"string","default":"left"},"imageUrl":{"type":"string","default":""},"imageId":{"type":"number","default":0},"imageAlt":{"type":"string","default":""},"title":{"type":"string","default":"Section Title"},"colorPreset":{"type":"string","default":"light"},"eyebrow":{"type":"string","default":""},"text":{"type":"string","default":"Add your content here."},"hasButton":{"type":"boolean","default":false},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"cheveux/content-block","version":"0.1.0","title":"Content Block","category":"design","icon":"align-pull-left","description":"Use this block to add your content! Flexible block with image and layout switching options.","keywords":["content","add"],"example":{},"supports":{"html":false,"align":["wide","full"]},"textdomain":"high-pulp-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"hasImage":{"type":"boolean","default":true},"imagePosition":{"type":"string","default":"left"},"imageUrl":{"type":"string","default":""},"imageId":{"type":"number","default":0},"imageAlt":{"type":"string","default":""},"title":{"type":"string","default":"Section Title"},"colorPreset":{"type":"string","default":"light"},"eyebrow":{"type":"string","default":""},"text":{"type":"string","default":"Add your content here."},"hasButton":{"type":"boolean","default":false},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"showCircleText":{"type":"boolean","default":true},"circlePosition":{"type":"string","default":"bottom-right"}}}');
 
 /***/ }
 

@@ -28,6 +28,7 @@
 
 				</a>
 
+
 				<button
 					class="navbar-toggler border-0 shadow-none"
 					type="button"
@@ -41,19 +42,27 @@
 				</button>
 
 				<div class="collapse navbar-collapse mt-3 mt-lg-0" id="primaryNavbar">
-					<div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center ms-lg-auto justify-content-lg-end w-100">
-						<?php
+					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'primary',
 						'container'      => false,
-						'menu_class'     => 'navbar-nav d-flex align-items-lg-center gap-lg-4 gap-3 ms-auto cheveux-navbar-nav',
+						'menu_class'     => 'navbar-nav cheveux-navbar-nav ms-lg-auto',
 						'fallback_cb'    => false,
 					) );
 					?>
 
-					<a href="<?php echo esc_url( home_url( '/book' ) ); ?>" class="text-decoration-none cheveux-book-btn ms-lg-4 mt-3 mt-lg-0 mx-lg-4">
-						Book
-					</a>
+					<?php $booking_url = get_theme_mod( 'cheveux_booking_url' ); ?>
+
+					<?php if ( $booking_url ) : ?>
+						<a
+							href="<?php echo esc_url( $booking_url ); ?>"
+							class="text-decoration-none cheveux-book-btn ms-lg-4 mt-4 mt-lg-0 m w"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Book Now
+						</a>
+					<?php endif; ?>
 				</div>
 
 			</div>

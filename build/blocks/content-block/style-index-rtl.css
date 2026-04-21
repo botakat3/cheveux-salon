@@ -89,6 +89,9 @@
 }
 .cheveux-button:hover {
   transform: translateY(-1px);
+  text-decoration: none;
+  background-color: #fff5eb;
+  color: #161A38;
 }
 .cheveux-button__wrap {
   display: flex;
@@ -123,6 +126,22 @@
     top: -60px;
     left: -60px;
   }
+}
+.content-section__media {
+  position: relative;
+}
+.circle-text {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+}
+.circle-text--top-left {
+  top: -4rem;
+  right: -5rem;
+}
+.circle-text--top-right {
+  top: -4rem;
+  left: -4rem;
 }
 @keyframes spin {
   from {

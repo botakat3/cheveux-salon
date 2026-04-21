@@ -33,8 +33,6 @@ $products   = get_field( 'products' );
 
 							<article <?php post_class( 'stylist-profile py-5' ); ?> id="post-<?php the_ID(); ?>">
 								<nav class="breadcrumbs mb-3">
-									<a href="<?php echo esc_url( home_url() ); ?>">Home</a>
-									<span>›</span>
 
 									<a href="<?php echo esc_url( home_url( '/stylist-directory/' ) ); ?>">
 										Stylists
@@ -93,7 +91,7 @@ $products   = get_field( 'products' );
 												<?php if ( $products ) : ?>
 													<div class="col-md-6">
 														<div class="quick-fact-card p-3 rounded-4 h-100">
-															<h5>Go-To Product</h5>
+															<h5>Go To Product</h5>
 															<p class="mb-0"><?php echo esc_html( $products ); ?></p>
 														</div>
 													</div>

@@ -10,6 +10,18 @@ export default function FullImageSettings({ attributes, setAttributes }) {
 
 	return (
 		<InspectorControls>
+			<PanelBody title="Color Preset" initialOpen={false}>
+				<SelectControl
+					label="Hero palette"
+					value={colorPreset}
+					options={Object.entries(COLOR_PRESETS).map(([key, val]) => ({
+						label: val.label,
+						value: key,
+					}))}
+					onChange={(value) => setAttributes({ colorPreset: value })}
+				/>
+			</PanelBody>
+
 			<PanelBody title="Layout Settings" initialOpen={true}>
 				<SelectControl
 					label="Image position"
@@ -22,17 +34,6 @@ export default function FullImageSettings({ attributes, setAttributes }) {
 				/>
 			</PanelBody>
 
-			<PanelBody title="Color Preset" initialOpen={false}>
-				<SelectControl
-					label="Hero palette"
-					value={colorPreset}
-					options={Object.entries(COLOR_PRESETS).map(([key, val]) => ({
-						label: val.label,
-						value: key,
-					}))}
-					onChange={(value) => setAttributes({ colorPreset: value })}
-				/>
-			</PanelBody>
 		</InspectorControls>
 	);
 }

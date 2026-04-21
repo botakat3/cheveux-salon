@@ -122,6 +122,14 @@ return array(
 			'buttonUrl' => array(
 				'type' => 'string',
 				'default' => ''
+			),
+			'showCircleText' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'circlePosition' => array(
+				'type' => 'string',
+				'default' => 'bottom-right'
 			)
 		)
 	),
@@ -281,17 +289,9 @@ return array(
 		'render' => 'file:./render.php',
 		'viewScript' => 'file:./view.js',
 		'attributes' => array(
-			'cardColor' => array(
+			'colorPreset' => array(
 				'type' => 'string',
-				'default' => '#000000'
-			),
-			'headingColor' => array(
-				'type' => 'string',
-				'default' => '#ffffff'
-			),
-			'textColor' => array(
-				'type' => 'string',
-				'default' => '#ffffff'
+				'default' => 'navy'
 			)
 		)
 	),

@@ -33,7 +33,7 @@ const COLOR_PRESETS = {
   },
   accent: {
     label: "Accent",
-    backgroundColor: "#607288",
+    backgroundColor: "#343D54",
     headingColor: "#f5f1eb",
     textColor: "#fff"
   }
@@ -72,6 +72,20 @@ function FullImageSettings({
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: "Color Preset",
+      initialOpen: false,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+        label: "Hero palette",
+        value: colorPreset,
+        options: Object.entries(_color_presets_js__WEBPACK_IMPORTED_MODULE_2__.COLOR_PRESETS).map(([key, val]) => ({
+          label: val.label,
+          value: key
+        })),
+        onChange: value => setAttributes({
+          colorPreset: value
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       title: "Layout Settings",
       initialOpen: true,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
@@ -86,20 +100,6 @@ function FullImageSettings({
         }],
         onChange: value => setAttributes({
           imagePosition: value
-        })
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-      title: "Color Preset",
-      initialOpen: false,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-        label: "Hero palette",
-        value: colorPreset,
-        options: Object.entries(_color_presets_js__WEBPACK_IMPORTED_MODULE_2__.COLOR_PRESETS).map(([key, val]) => ({
-          label: val.label,
-          value: key
-        })),
-        onChange: value => setAttributes({
-          colorPreset: value
         })
       })
     })]
@@ -200,9 +200,9 @@ function Edit({
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
             src: imageUrl,
             alt: imageAlt
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "about-hero__image-actions",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUpload, {
                 allowedTypes: ["image"],
                 value: imageId,
@@ -219,7 +219,16 @@ function Edit({
                   children: "Replace image"
                 })
               })
-            })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+              variant: "link",
+              isDestructive: true,
+              onClick: () => setAttributes({
+                imageId: 0,
+                imageUrl: "",
+                imageAlt: ""
+              }),
+              children: "Remove image"
+            })]
           })]
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaUploadCheck, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.MediaPlaceholder, {
@@ -236,7 +245,7 @@ function Edit({
             accept: "image/*"
           })
         })
-      })]
+      }), "   "]
     })]
   });
 }

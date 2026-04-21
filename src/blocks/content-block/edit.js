@@ -2,11 +2,14 @@ import {
 	useBlockProps,
 	RichText,
 	MediaPlaceholder,
-	MediaUploadCheck, URLInput, URLInputButton,
+	MediaUploadCheck,
+	MediaUpload,
+	URLInputButton,
 } from "@wordpress/block-editor";
+import { Button } from "@wordpress/components";
 import ContentBlockSettings from "./ContentBlockSettings.js";
 import "./editor.scss";
-import {COLOR_PRESETS} from "../color-presets.js";
+import { COLOR_PRESETS } from "../color-presets.js";
 
 export default function Edit({ attributes, setAttributes }) {
 	const {
@@ -14,6 +17,7 @@ export default function Edit({ attributes, setAttributes }) {
 		imagePosition,
 		imageUrl,
 		imageAlt,
+		imageId,
 		eyebrow,
 		title,
 		text,
@@ -21,6 +25,8 @@ export default function Edit({ attributes, setAttributes }) {
 		hasButton,
 		buttonText,
 		buttonUrl,
+		showCircleText,
+		circlePosition
 	} = attributes;
 
 	const colors = COLOR_PRESETS[colorPreset] || COLOR_PRESETS.light;
@@ -49,12 +55,48 @@ export default function Edit({ attributes, setAttributes }) {
 					{hasImage && (
 						<div className="content-section__media">
 							{imageUrl ? (
-								<img src={imageUrl} alt={imageAlt}/>
+								<>
+									<img src={imageUrl} alt={imageAlt} />
+
+									<div className="content-section__image-actions">
+										<MediaUploadCheck>
+											<MediaUpload
+												onSelect={(media) =>
+													setAttributes({
+														imageId: media?.id || 0,
+														imageUrl: media?.url || "",
+														imageAlt: media?.alt || "",
+													})
+												}
+												allowedTypes={["image"]}
+												render={({ open }) => (
+													<Button onClick={open} variant="secondary">
+														Replace Image
+													</Button>
+												)}
+											/>
+										</MediaUploadCheck>
+
+										<Button
+											variant="link"
+											isDestructive
+											onClick={() =>
+												setAttributes({
+													imageId: 0,
+													imageUrl: "",
+													imageAlt: "",
+												})
+											}
+										>
+											Remove Image
+										</Button>
+									</div>
+								</>
 							) : (
 								<MediaUploadCheck>
 									<MediaPlaceholder
 										icon="format-image"
-										labels={{title: "Content image"}}
+										labels={{ title: "Content image" }}
 										onSelect={(media) =>
 											setAttributes({
 												imageId: media?.id || 0,
@@ -67,21 +109,23 @@ export default function Edit({ attributes, setAttributes }) {
 									/>
 								</MediaUploadCheck>
 							)}
-							<div className="circle-text">
+							{showCircleText && (
+							<div className={`circle-text circle-text--${circlePosition}`}>
 								<svg viewBox="0 0 200 200">
 									<path
 										id="circlePath"
 										d="M 100,100 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"
 										fill="none"
 									/>
-
-									<text style={{fill: colors.headingColor}}>
+									<text style={{ fill: colors.headingColor }}>
 										<textPath href="#circlePath">
 											KEEPING HAIR HEALTHY • ONE STRAND AT A TIME •
 										</textPath>
 									</text>
 								</svg>
-							</div>						</div>
+							</div>
+								)}
+						</div>
 					)}
 
 					<div className="content-section__content">

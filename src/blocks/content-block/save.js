@@ -13,6 +13,9 @@ export default function save({ attributes }) {
 		colorPreset,
 		hasButton,
 		buttonText,
+		buttonUrl,
+		showCircleText,
+		circlePosition
 	} = attributes;
 
 	const colors = COLOR_PRESETS[colorPreset] || COLOR_PRESETS.light;
@@ -33,11 +36,14 @@ export default function save({ attributes }) {
 		<section {...blockProps}>
 			<div className="content-section__inner">
 
+
 				{hasImage && imageUrl && (
 					<div className="content-section__media">
 						<img src={imageUrl} alt={imageAlt}/>
 
-						<div className="circle-text">
+						{showCircleText && (
+
+							<div className={`circle-text circle-text--${circlePosition}`}>
 							<svg viewBox="0 0 200 200">
 								<path
 									id="circlePath"
@@ -51,7 +57,9 @@ export default function save({ attributes }) {
 									</textPath>
 								</text>
 							</svg>
-						</div>					</div>
+						</div>
+							)}
+						</div>
 				)}
 
 				{/* TEXT CONTENT */}
@@ -76,15 +84,15 @@ export default function save({ attributes }) {
 						value={text}
 					/>
 
-					{hasButton && buttonText && (
+					{hasButton && buttonText && buttonUrl && (
 						<div className="cheveux-button-wrap">
-							<div className="cheveux-button" role="button">
-								<RichText.Content value={buttonText}/>
-							</div>
-
-
+							<a className="cheveux-button"
+							   href={buttonUrl}
+							   target="_blank"
+							   rel="noopener noreferrer">
+								<RichText.Content tagName="span" value={buttonText} />
+							</a>
 						</div>
-
 					)}
 
 
