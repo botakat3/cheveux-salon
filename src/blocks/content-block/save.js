@@ -1,4 +1,4 @@
-import {RichText, useBlockProps} from "@wordpress/block-editor";
+import {RichText, useBlockProps, InnerBlocks} from "@wordpress/block-editor";
 import {COLOR_PRESETS} from "../color-presets.js";
 
 export default function save({ attributes }) {
@@ -88,14 +88,17 @@ export default function save({ attributes }) {
 						<div className="cheveux-button-wrap">
 							<a className="cheveux-button"
 							   href={buttonUrl}
-							   target="_blank"
+								// target="_blank"
 							   rel="noopener noreferrer">
-								<RichText.Content tagName="span" value={buttonText} />
+								<RichText.Content tagName="span" value={buttonText}/>
 							</a>
 						</div>
 					)}
 
 
+					<div className="content-section__innerblocks">
+						<InnerBlocks.Content/>
+					</div>
 				</div>
 
 			</div>

@@ -19,14 +19,11 @@
 	<header class="cheveux-header px-lg-5 sticky-top">
 		<nav class="navbar navbar-dark navbar-expand-lg p-0">
 			<div class="container-fluid cheveux-navbar-container d-flex align-items-center justify-content-between">
-				<a class="navbar-brand cheveux-navbar-brand mb-0" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<?php if ( has_custom_logo() ) : ?>
 						<?php the_custom_logo(); ?>
 					<?php else : ?>
 						<?php bloginfo( 'name' ); ?>
 					<?php endif; ?>
-
-				</a>
 
 
 				<button

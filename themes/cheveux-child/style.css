@@ -151,8 +151,8 @@ p{
 }
 
 .cheveux-book-btn:hover {
-	background: #e9dfd2;
-	color: #111;
+	background: #f5f1eb;
+	color: #000;
 	opacity: 0.9;
 }
 
@@ -172,7 +172,7 @@ p{
 .navbar-toggler-icon {
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1035px) {
 	.cheveux-header {
 		padding: .5rem 2rem;
 		text-align: center;
@@ -199,7 +199,7 @@ p{
 
 /* FOOTER */
 .cheveux-footer {
-	background-color: #000;
+	background-color: #00020F;
 	color: #fff;
 }
 
@@ -270,7 +270,6 @@ p{
 
 /* Formidable form wrapper */
 .frm_forms {
-	padding: clamp(2.5rem, 6vw, 5rem);
 
 	.frm_form_fields {
 		display: grid;
@@ -288,7 +287,7 @@ p{
 		margin-bottom: 0.5rem;
 		font-size: 0.95rem;
 		font-weight: 500;
-		color: #2f1f25;
+		color: #f5f1eb;
 		letter-spacing: 0.03em;
 	}
 
@@ -304,8 +303,8 @@ p{
 		border: 1px solid #e7d8dc;
 		border-radius: 999px;
 		padding: 0.9rem 1.1rem;
-		background: #fffaf7;
-		color: #2f1f25;
+		/*background: #fffaf7;*/
+		/*color: #2f1f25;*/
 		font-size: 1rem;
 		box-shadow: none;
 		transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
@@ -329,7 +328,7 @@ p{
 	/* Placeholders */
 	input::placeholder,
 	textarea::placeholder {
-		color: #a68f97;
+		color: #f5f1eb;
 	}
 
 	/* Submit button */
@@ -342,8 +341,8 @@ p{
 		border: none;
 		border-radius: 999px;
 		padding: 0.9rem 1.6rem;
-		background: #2f1f25;
-		color: #fff5eb;
+		background: #161a38; !important;
+		color: #fff5eb; !important;
 		font-weight: 600;
 		letter-spacing: 0.04em;
 		transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
@@ -390,4 +389,414 @@ p{
 	.frm_radio {
 		margin-bottom: 0.5rem;
 	}
+
 }
+
+
+/* BLOG STYLES */
+.hair-blog {
+	background-color: #f5f1ea;
+	color: #111;
+}
+
+.hair-blog__header {
+	padding-top: 1rem;
+}
+
+.hair-blog__eyebrow {
+	font-size: 0.72rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	font-family: Poppins, sans-serif;
+	font-weight: 600;
+}
+
+.hair-blog__title {
+	font-family: "BagekiLuxury", serif;
+	font-size: clamp(3rem, 7vw, 5.5rem);
+	line-height: 0.95;
+}
+
+.hair-blog__intro {
+	font-size: 1.05rem;
+	line-height: 1.7;
+	max-width: 32rem;
+	font-family: Poppins, sans-serif;
+}
+
+.hair-blog__tags {
+	a {
+		text-decoration: none;
+	}
+}
+
+.hair-blog__tag {
+	display: inline-block;
+	border: 1px solid rgba(0, 0, 0, 0.35);
+	padding: 0.35rem 0.8rem;
+	font-size: 0.68rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #111;
+	transition: 0.2s ease;
+	border-radius: 999px;
+}
+
+.hair-blog__tag:hover {
+	background: #111;
+	color: #fff;
+}
+
+.hair-blog__top-actions {
+	width: 100%;
+}
+
+.hair-blog__search {
+	width: 100%;
+	max-width: 320px;
+}
+
+.hair-blog__search-wrap {
+	display: flex;
+	align-items: center;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	border-radius: 999px;
+	overflow: hidden;
+	background: transparent;
+}
+
+.hair-blog__search-input {
+	flex: 1;
+	border: 0;
+	background: transparent;
+	padding: 0.7rem 1rem;
+	font-size: 0.95rem;
+	outline: none;
+	font-family: Poppins, sans-serif;
+	color: #111;
+}
+
+.hair-blog__search-input::placeholder {
+	color: rgba(0, 0, 0, 0.55);
+}
+
+.hair-blog__search-button {
+	border: 0;
+	background: transparent;
+	padding: 0.7rem 1rem;
+	font-size: 0.72rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	font-family: Poppins, sans-serif;
+	color: #111;
+	border-left: 1px solid rgba(0, 0, 0, 0.15);
+	transition: 0.2s ease;
+}
+
+.hair-blog__search-button:hover {
+	background: #111;
+	color: #fff;
+}
+
+.hair-blog__divider {
+	border: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	margin: 2rem 0;
+	opacity: 1;
+}
+
+.blog-card {
+	height: 100%;
+	border-right: 1px solid rgba(0, 0, 0, 0.15);
+	padding-right: 1.25rem;
+}
+
+.blog-card__link {
+	color: inherit;
+	display: block;
+	height: 100%;
+}
+
+.blog-card__image {
+	overflow: hidden;
+	border-radius: 0.35rem;
+	margin-bottom: 1rem;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+}
+
+.blog-card__image--featured {
+	aspect-ratio: 16 / 10;
+}
+
+.blog-card__image--small {
+	aspect-ratio: 16 / 11;
+}
+
+.blog-card__meta {
+	font-size: 0.62rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	font-family: Poppins, sans-serif;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.blog-card__title {
+	font-family: Poppins, sans-serif;
+	font-weight: 400;
+	color: #111;
+}
+
+.blog-card__title--featured {
+	font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+	line-height: 1.15;
+	max-width: 18ch;
+}
+
+.blog-card__title--small {
+	font-size: 1.3rem;
+	line-height: 1.2;
+}
+
+.hair-blog__pagination a {
+	text-decoration: none;
+	border: 1px solid rgba(0, 0, 0, 0.35);
+	padding: 0.35rem 0.7rem;
+	font-size: 0.68rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #111;
+}
+
+.hair-blog__pagination a:hover {
+	background: #111;
+	color: #fff;
+}
+
+.hair-blog__newsletter-title {
+	font-family: Poppins, sans-serif;
+	font-size: clamp(2.3rem, 5vw, 4.25rem);
+	line-height: 1.02;
+	max-width: 10ch;
+}
+
+.hair-blog__newsletter-text {
+	font-family: Poppins, sans-serif;
+	font-size: 1rem;
+	line-height: 1.7;
+	max-width: 24rem;
+}
+
+@media (max-width: 991.98px) {
+	.hair-blog__top-actions {
+		align-items: flex-start !important;
+	}
+
+	.hair-blog__search {
+		max-width: 100%;
+		width: 100%;
+	}
+	.blog-card {
+		border-right: 0;
+		padding-right: 0;
+	}
+
+	.hair-blog__divider {
+		margin: 1.5rem 0;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.hair-blog__title {
+		font-size: 3rem;
+	}
+
+	.blog-card__title--featured,
+	.blog-card__title--small {
+		max-width: none;
+	}
+
+	.hair-blog__newsletter-title {
+		max-width: none;
+	}
+}
+
+/* SINGLE POST STYLING */
+.hair-post {
+	background-color: #fff5eb;
+	color: #111;
+}
+
+.hair-post__header {
+	padding-top: 1rem;
+	max-width: 60rem;
+}
+
+.hair-post__eyebrow {
+	font-size: 0.72rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	font-family: Poppins, sans-serif;
+	font-weight: 600;
+}
+
+.hair-post__title {
+	font-family: "BagekiLuxury", serif;
+	font-size: clamp(3rem, 7vw, 5.5rem);
+	line-height: 0.95;
+	max-width: none;
+	width: 100%;
+}
+
+.hair-post__meta {
+	font-size: 0.82rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	font-family: Poppins, sans-serif;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.hair-post__featured-image {
+	border-radius: 0.5rem;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+		aspect-ratio: 16 / 5;
+		object-fit: cover;
+	}
+}
+
+.hair-post__content {
+	font-family: Poppins, sans-serif;
+	font-size: 1.05rem;
+	line-height: 1.9;
+	color: #111;
+}
+
+.hair-post__content > * + * {
+	margin-top: 1.4rem;
+}
+
+.hair-post__content h2,
+.hair-post__content h3,
+.hair-post__content h4 {
+	font-family: "BagekiLuxury", serif;
+	line-height: 1.05;
+	margin-top: 2.5rem;
+	margin-bottom: 0.75rem;
+}
+
+.hair-post__content h2 {
+	font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.hair-post__content h3 {
+	font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.hair-post__content p {
+	margin-bottom: 0;
+}
+
+.hair-post__content ul,
+.hair-post__content ol {
+	padding-left: 1.25rem;
+}
+
+.hair-post__content li + li {
+	margin-top: 0.6rem;
+}
+
+.hair-post__content a {
+	color: inherit;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.14em;
+}
+
+.hair-post__content blockquote {
+	border-left: 2px solid rgba(0, 0, 0, 0.2);
+	padding-left: 1rem;
+	font-style: italic;
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.hair-post__tags-title,
+.hair-post__related-title {
+	font-family: Poppins, sans-serif;
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+.hair-post__tag {
+	display: inline-block;
+	border: 1px solid rgba(0, 0, 0, 0.35);
+	padding: 0.35rem 0.8rem;
+	font-size: 0.68rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #111;
+	transition: 0.2s ease;
+	border-radius: 999px;
+	text-decoration: none;
+}
+
+.hair-post__tag:hover {
+	background: #111;
+	color: #fff;
+}
+
+.hair-post__back-link {
+	display: inline-block;
+	text-decoration: none;
+	color: #111;
+	font-size: 0.78rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	padding-bottom: 0.15rem;
+}
+
+.hair-post__back-link:hover {
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.hair-post__divider {
+	border: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	margin: 4rem 0 2rem;
+	opacity: 1;
+}
+
+.mt-6 {
+	margin-top: 5rem;
+}
+
+@media (max-width: 991.98px) {
+	.hair-post__title {
+		max-width: none;
+	}
+
+	.hair-post__featured-image img {
+		aspect-ratio: 16 / 10;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.hair-post__title {
+		font-size: 3rem;
+	}
+
+	.hair-post__content {
+		font-size: 1rem;
+		line-height: 1.8;
+	}
+}
+

@@ -82,7 +82,29 @@
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
+	.content-section {
+		&__content {
+			padding: 2rem 1.25rem;
+		}
+
+		&__media {
+			min-height: 320px;
+		}
+
+		&__image-actions {
+			padding: 0 1.25rem 1rem;
+		}
+
+		.content-section__media {
+			min-height: 280px;
+		}
+
+		.content-section__media img {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
 	.content-section--image-left .content-section__inner,
 	.content-section--image-right .content-section__inner {
 		grid-template-columns: 1fr;

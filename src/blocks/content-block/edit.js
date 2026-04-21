@@ -4,7 +4,7 @@ import {
 	MediaPlaceholder,
 	MediaUploadCheck,
 	MediaUpload,
-	URLInputButton,
+	URLInputButton, InnerBlocks,
 } from "@wordpress/block-editor";
 import { Button } from "@wordpress/components";
 import ContentBlockSettings from "./ContentBlockSettings.js";
@@ -43,6 +43,20 @@ export default function Edit({ attributes, setAttributes }) {
 		},
 	});
 
+	const ALLOWED_BLOCKS = [
+		"core/paragraph",
+		"core/heading",
+		"core/list",
+		"core/buttons",
+		"core/button",
+		"core/spacer",
+		"core/html",
+		"formidable/simple-form",
+	];
+
+	const TEMPLATE = [
+		["core/paragraph", { placeholder: "Add extra content..." }],
+	];
 	return (
 		<>
 			<ContentBlockSettings
@@ -143,9 +157,9 @@ export default function Edit({ attributes, setAttributes }) {
 							tagName="h2"
 							className="content-section__title"
 							value={title}
-							onChange={(value) => setAttributes({ title: value })}
+							onChange={(value) => setAttributes({title: value})}
 							placeholder="Section Title"
-							style={{ color: colors.headingColor}}
+							style={{color: colors.headingColor}}
 							allowedFormats={[
 								'core/bold',
 								'core/italic'
@@ -156,7 +170,7 @@ export default function Edit({ attributes, setAttributes }) {
 							tagName="p"
 							className="content-section__text"
 							value={text}
-							onChange={(value) => setAttributes({ text: value })}
+							onChange={(value) => setAttributes({text: value})}
 							placeholder="Add your content here."
 							allowedFormats={[
 								'core/bold',
@@ -168,11 +182,11 @@ export default function Edit({ attributes, setAttributes }) {
 						{hasButton && (
 							<div className="cheveux-button-wrap"
 							>
-								<div className="cheveux-button" role="button" >
+								<div className="cheveux-button" role="button">
 									<RichText
 										tagName="span"
 										value={buttonText}
-										onChange={(value) => setAttributes({ buttonText: value })}
+										onChange={(value) => setAttributes({buttonText: value})}
 										placeholder="Button text"
 										allowedFormats={[]}
 
@@ -181,11 +195,18 @@ export default function Edit({ attributes, setAttributes }) {
 
 								<URLInputButton
 									url={buttonUrl}
-									onChange={(url) => setAttributes({ buttonUrl: url })}
+									onChange={(url) => setAttributes({buttonUrl: url})}
 								/>
 							</div>
 						)}
 
+						<div className="content-section__innerblocks">
+							<InnerBlocks
+								allowedBlocks={ALLOWED_BLOCKS}
+								template={TEMPLATE}
+								templateLock={false}
+							/>
+						</div>
 					</div>
 				</div>
 			</section>

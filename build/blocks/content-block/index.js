@@ -196,6 +196,10 @@ function Edit({
       color: colors.textColor
     }
   });
+  const ALLOWED_BLOCKS = ["core/paragraph", "core/heading", "core/list", "core/buttons", "core/button", "core/spacer", "core/html", "formidable/simple-form"];
+  const TEMPLATE = [["core/paragraph", {
+    placeholder: "Add extra content..."
+  }]];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ContentBlockSettings_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
       attributes: attributes,
@@ -326,6 +330,13 @@ function Edit({
                 buttonUrl: url
               })
             })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            className: "content-section__innerblocks",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks, {
+              allowedBlocks: ALLOWED_BLOCKS,
+              template: TEMPLATE,
+              templateLock: false
+            })
           })]
         })]
       })
@@ -485,14 +496,18 @@ function save({
           className: "cheveux-button-wrap",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
             className: "cheveux-button",
-            href: buttonUrl,
-            target: "_blank",
+            href: buttonUrl
+            // target="_blank"
+            ,
             rel: "noopener noreferrer",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
               tagName: "span",
               value: buttonText
             })
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "content-section__innerblocks",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks.Content, {})
         })]
       })]
     })
