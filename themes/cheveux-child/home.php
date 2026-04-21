@@ -34,13 +34,32 @@
 							</form>
 
 							<div class="hair-blog__tags d-flex flex-wrap justify-content-lg-end gap-2">
-								<a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="hair-blog__tag">All</a>
-								<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Color' ) ) ); ?>" class="hair-blog__tag">Color</a>
-								<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Styling' ) ) ); ?>" class="hair-blog__tag">Styling</a>
-								<a href="<?php echo esc_url( get_category_link( get_cat_ID( 'Treatments' ) ) ); ?>" class="hair-blog__tag">Treatments</a>
+
+								<!-- All button -->
+								<a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="hair-blog__tag">
+									All
+								</a>
+
+								<?php
+								$categories = get_categories(array(
+									'taxonomy'   => 'category',
+									'hide_empty' => true,
+								));
+
+								foreach ($categories as $category) :
+									?>
+									<a
+										href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>"
+										class="hair-blog__tag"
+									>
+										<?php echo esc_html( $category->name ); ?>
+									</a>
+								<?php endforeach; ?>
+
 							</div>
 						</div>
-					</div>				</div>
+					</div>
+				</div>
 			</header>
 
 			<hr class="hair-blog__divider">
@@ -152,20 +171,27 @@
 
 			<hr class="hair-blog__divider">
 
-			<section class="hair-blog__newsletter py-4">
+			<section class="hair-blog__newsletter py-4 ">
 				<div class="row align-items-start gy-4">
-					<div class="col-lg-7">
+					<div class="col-lg-5">
 						<p class="hair-blog__eyebrow mb-3">NEWSLETTER</p>
-						<h2 class="hair-blog__newsletter-title mb-0">
+						<h2 class="hair-blog__newsletter-title mb-0 w-100">
 							Get the latest hair tips into your inbox
 						</h2>
-					</div>
-
-					<div class="col-lg-5">
 						<p class="hair-blog__newsletter-text mb-0">
 							Stay up to date with styling advice, product recommendations, and salon updates curated by the Cheveux team.
 						</p>
+
 					</div>
+
+					<div class="col-lg-7 pt-lg-5">
+						<div class="hair-blog__newsletter-form">
+							<?php echo do_shortcode('[mailpoet_form id="1"]'); ?>
+						</div>
+
+					</div>
+
+
 				</div>
 			</section>
 

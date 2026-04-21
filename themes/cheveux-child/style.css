@@ -395,7 +395,7 @@ p{
 
 /* BLOG STYLES */
 .hair-blog {
-	background-color: #f5f1ea;
+	background-color: #fff5eb;
 	color: #111;
 }
 
@@ -579,10 +579,16 @@ p{
 }
 
 .hair-blog__newsletter-title {
-	font-family: Poppins, sans-serif;
+	font-family: "Bageki Luxury";
 	font-size: clamp(2.3rem, 5vw, 4.25rem);
 	line-height: 1.02;
-	max-width: 10ch;
+	max-width: 100%;
+}
+
+.hair-blog__newsletter {
+	padding: clamp(2.5rem, 6vw, 5rem);
+
+
 }
 
 .hair-blog__newsletter-text {

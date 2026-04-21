@@ -7,6 +7,11 @@
 
 			<div class="row justify-content-center">
 				<div class="col-xl-10">
+					<div class="hair-post__back mt-5">
+						<a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" class="hair-post__back-link">
+							← Back to Hair Tips
+						</a>
+					</div>
 
 					<header class="hair-post__header">
 						<p class="hair-post__eyebrow mb-3">
