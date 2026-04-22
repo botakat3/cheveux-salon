@@ -83,7 +83,7 @@ $products   = get_field( 'products' );
 												<?php if ( $services ) : ?>
 													<div class="col-md-6">
 														<div class="quick-fact-card p-3 rounded-4 h-100">
-															<h5>Favorite Service</h5>
+															<h5>Hair Service</h5>
 															<p class="mb-0"><?php echo esc_html( $services ); ?></p>
 														</div>
 													</div>
@@ -99,7 +99,7 @@ $products   = get_field( 'products' );
 												<?php if ( $coffee ) : ?>
 													<div class="col-md-6">
 														<div class="quick-fact-card p-3 rounded-4 h-100">
-															<h5>Coffee Order</h5>
+															<h5>Cafe Order</h5>
 															<p class="mb-0"><?php echo esc_html( $coffee ); ?></p>
 														</div>
 													</div>

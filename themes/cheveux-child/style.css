@@ -35,6 +35,19 @@ p{
 
 
 
+.breadcrumbs {
+		display: inline-block;
+		text-decoration: none;
+		color: #111;
+		font-size: 0.78rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		padding-bottom: 0.15rem;
+	}
+
+	.breadcrumbs:hover {
+		color: rgba(0, 0, 0, 0.7);
+	}
 
 
 .stylist-profile {
@@ -151,7 +164,7 @@ p{
 }
 
 .cheveux-book-btn:hover {
-	background: #f5f1eb;
+	background-color: #f5f1eb;
 	color: #000;
 	opacity: 0.9;
 }
@@ -805,4 +818,311 @@ p{
 		line-height: 1.8;
 	}
 }
+
+/* AMELIA PLUGIN */
+.amelia-v2-booking {
+	padding: clamp(2.5rem, 6vw, 5rem);
+	background-color: #fff5eb;
+}
+
+.am-lite-footer {
+	margin-top: 2em;
+
+}
+
+.am-lite-footer-link {
+	text-decoration: none;
+	color: #161a38;
+	font-weight: lighter;
+}
+
+
+
+
+
+.members-dashboard {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 4rem 1.5rem 6rem;
+	color: #1f1a17;
+}
+
+.members-dashboard__hero {
+	background: #071126;
+	color: #f7f2ec;
+	padding: clamp(2rem, 5vw, 4rem);
+	margin-bottom: 2rem;
+}
+
+.members-dashboard__eyebrow {
+	font-size: 0.8rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+	opacity: 0.85;
+}
+
+.members-dashboard__title {
+	font-family: "BagekiLuxury", serif;
+	font-size: clamp(2.8rem, 6vw, 5rem);
+	line-height: 0.95;
+	margin-bottom: 1rem;
+}
+
+.members-dashboard__intro {
+	font-size: 1rem;
+	line-height: 1.8;
+	max-width: 42rem;
+	margin: 0;
+}
+
+.members-dashboard__grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.members-card {
+	background: #fff5eb;
+	padding: 2rem;
+	border: 1px solid rgba(22, 26, 56, 0.08);
+}
+
+.members-card--full {
+	width: 100%;
+}
+
+.members-card__title {
+	font-family: "BagekiLuxury", serif;
+	font-size: clamp(1.8rem, 3vw, 2.5rem);
+	line-height: 1;
+	margin-bottom: 1rem;
+	color: #161a38;
+}
+
+.members-card__text {
+	font-size: 1rem;
+	line-height: 1.8;
+	margin-bottom: 1.5rem;
+}
+
+.members-button {
+	display: inline-block;
+	padding: 0.95rem 2rem;
+	background: #161a38;
+	color: #fff !important;
+	text-decoration: none;
+	border: 1px solid #161a38;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.9rem;
+	transition: all 0.2s ease;
+}
+
+.members-button:hover {
+	background: transparent;
+	color: #161a38 !important;
+}
+
+.members-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.members-list li {
+	padding: 0.85rem 0;
+	border-bottom: 1px solid rgba(22, 26, 56, 0.08);
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+.members-list li:last-child {
+	border-bottom: 0;
+}
+
+.members-favorites ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.5rem;
+}
+
+.members-favorites li {
+	/*background: #fff;*/
+	/*border: 1px solid rgba(22, 26, 56, 0.08);*/
+	padding: 1rem;
+}
+
+.members-favorites a {
+	color: #161a38;
+	text-decoration: none;
+	display: block;
+}
+
+.members-favorites a:hover {
+	opacity: 0.85;
+}
+
+.members-favorites img {
+	width: 100%;
+	height: 260px;
+	object-fit: cover;
+	display: block;
+	margin-bottom: 1rem;
+}
+
+.members-favorites .ufavorites,
+.members-favorites .user-favorites,
+.members-favorites .favorite-posts {
+	margin: 0;
+	padding: 0;
+}
+
+@media (max-width: 991px) {
+	.members-dashboard__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.members-favorites ul {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 767px) {
+	.members-dashboard {
+		padding: 2rem 1rem 4rem;
+	}
+
+	.members-card {
+		padding: 1.5rem;
+	}
+
+	.members-favorites ul {
+		grid-template-columns: 1fr;
+	}
+
+	.members-favorites img {
+		height: 220px;
+	}
+}
+
+
+/* PAGE WRAP */
+.um {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 4rem 1.5rem 6rem;
+	color: #1f1a17;
+}
+
+/* ACCOUNT CONTAINER */
+.um-account-main,
+.um-form {
+	background: #fff5eb;
+	padding: 2rem;
+	border: 1px solid rgba(22, 26, 56, 0.08);
+}
+
+/* SIDEBAR */
+.um-account-side {
+	background: #071126;
+	padding: 2rem 1.5rem;
+}
+
+.um-account-side ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.um-account-side li {
+	margin-bottom: 1rem;
+}
+
+.um-account-side li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 0.9rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	display: block;
+}
+
+.um-account-side li a:hover,
+.um-account-side li a.current {
+	opacity: 0.7;
+}
+
+/* TITLES */
+.um-account-title,
+.um-form .um-field-label label {
+	font-family: "BagekiLuxury", serif;
+	color: #161a38;
+}
+
+/* INPUT FIELDS */
+.um-form input,
+.um-form select,
+.um-form textarea {
+	border: 1px solid rgba(22, 26, 56, 0.15);
+	padding: 0.75rem;
+	width: 100%;
+	font-size: 0.95rem;
+	background: #fff;
+}
+
+/* REMOVE ROUNDED DEFAULT */
+.um-form input,
+.um-form select {
+	border-radius: 0;
+}
+
+/* BUTTONS */
+.um a.um-button,
+.um input[type="submit"].um-button {
+	background: #161a38 !important;
+	color: #fff !important;
+	border: 1px solid #161a38 !important;
+	border-radius: 0 !important;
+	padding: 0.85rem 2rem !important;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.9rem;
+	transition: all 0.2s ease;
+}
+
+/* BUTTON HOVER */
+.um a.um-button:hover,
+.um input[type="submit"].um-button:hover {
+	background: transparent !important;
+	color: #161a38 !important;
+}
+
+/* SECTION SPACING */
+.um-account-tab {
+	margin-bottom: 2rem;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+	.um {
+		padding: 2rem 1rem 4rem;
+	}
+
+	.um-account-main,
+	.um-form {
+		padding: 1.5rem;
+	}
+}
+
+
+
+
+
+
+
 

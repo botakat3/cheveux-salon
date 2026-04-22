@@ -7,7 +7,7 @@
 				<div class="row align-items-end gy-4">
 					<div class="col-lg-8">
 						<p class="hair-blog__eyebrow mb-3">HAIR TIPS</p>
-						<h1 class="hair-blog__title mb-3">Blog</h1>
+						<h1 class="hair-blog__title mb-3">The Cheveux Edit</h1>
 						<p class="hair-blog__intro mb-0">
 							Expert tips, product picks, and everyday guidance to help you keep your hair healthy, styled, and feeling its best.
 						</p>
